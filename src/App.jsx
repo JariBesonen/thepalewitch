@@ -4,9 +4,11 @@ import Home from "./Pages/Home";
 import Games from "./Pages/Games";
 import Contact from "./Pages/Contact";
 import Support from "./Pages/Support";
+import Navbar from "./Components/Navbar";
 function App() {
   return (
     <Router>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
