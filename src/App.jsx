@@ -5,6 +5,7 @@ import Games from "./Pages/Games";
 import Contact from "./Pages/Contact";
 import Support from "./Pages/Support";
 import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/support" element={<Support />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
