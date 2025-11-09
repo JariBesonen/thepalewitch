@@ -8,7 +8,7 @@ function Home() {
         <div className="hero-video-info">
           <h2>Into the Mines</h2>
           <span>a description about the game and the features within it</span>
-          <button>wishlist to steam</button>
+          <button>Wishlist to Steam</button>
         </div>
       </div>
       <div className="img-carousel-wrapper">
@@ -27,14 +27,13 @@ function Home() {
           <h3>Sign Up For Updates</h3>
           <h4>Email address</h4>
           <input type="text" />
-          <button>subscribe</button>
+          <button>Subscribe</button>
         </div>
         <div className="support-wrapper">
           <h3>Support My Game Dev Journey</h3>
           <button>Support Me</button>
         </div>
       </div>
-      
     </div>
   );
 }

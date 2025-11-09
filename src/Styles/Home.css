@@ -1,110 +1,133 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    border: 1px solid red;
-    color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: white;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ 
 }
 
 .homepage-wrapper {
-    width: 100vw;
-    height: auto;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  width: 100vw;
+  height: auto;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .hero-section {
-    width: 100vw;
-    height: 40rem;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  width: 100vw;
+  height: 40rem;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
 }
 
 .hero-video-wrapper {
-    width: 40%;
-    height: 30rem;
-    background-color: rgb(54, 54, 54);
+  width: 40%;
+  height: 30rem;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
 }
 
 .hero-video-info {
-    width: 30%;
-    height: 30rem;
-    background-color: rgb(32, 35, 37);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  width: 30%;
+  height: 30rem;
+  background-color: rgb(31, 43, 41);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0 1rem;
 }
 
 .hero-video-info h2 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
 
 .hero-video-info button {
-    width: 11rem;
-    height: 3.3rem;
-    background-color: red;
-    font-size: 1.2rem;
+  width: 15rem;
+  height: 3.5rem;
+    background-color: rgb(99, 0, 0);
+  font-size: 1.3rem;
+  border: none;
 }
 
 .hero-video-info span {
-    font-size: 2rem;
+  font-size: 1.7rem;
+  font-weight: 200;
+  margin-left: 3rem;
 }
 
 .img-carousel-wrapper {
-    height: 30rem;
-    width: 100vw;
-    background-color: rgb(0, 0, 0);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+  height: 35rem;
+  width: 100vw;
+  background-color: rgb(0, 31, 26);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .carousel-imgs {
-    width: 30%;
-    height: 90%;
-    background-color: rgb(82, 75, 75);
+  width: 30%;
+  height: 90%;
+  background-color: rgb(32, 32, 32);
 }
 
 .call-to-action-wrapper {
-    width: 100vw;
-    height: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  width: 100vw;
+  height: 35rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  
 }
 
 .call-to-action-wrapper h3 {
-    font-size: 2rem;
+  font-size: 3rem;
 }
 
 .call-to-action-wrapper button {
-    width: 10rem;
-    height: 3rem;
-    background-color: red;
-    font-size: 1.2rem;
+  width: 10rem;
+  height: 3rem;
+  background-color: rgb(99, 0, 0);
+  border: none;
+  font-size: 1.2rem;
 }
 .newsletter-wrapper {
-    width: 40%;
-    height: 80%;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  width: 40%;
+  height: 80%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .support-wrapper {
-    width: 40%;
-    height: 80%;
-    background-color: black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+  width: 40%;
+  height: 80%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.newsletter-wrapper h3, .newsletter-wrapper h4, .newsletter-wrapper input {
+  margin-bottom: 6rem;
+}
+
+.newsletter-wrapper h4 {
+  font-size: 1.4rem;
+}
+
+.newsletter-wrapper input {
+  height: 2rem;
+  width: 20rem;
+  color: black;
+  font-size: 1.5rem;
 }

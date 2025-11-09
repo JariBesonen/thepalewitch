@@ -23,7 +23,7 @@ h2 {
 }
 
 label {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
 }
 
 #email {
@@ -32,12 +32,13 @@ label {
 }
 
 #send-message-btn {
-    width: 11rem;
+     width: 11rem;
     height: 3rem;
-    background-color: red;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+    background-color: rgb(99, 0, 0);
+    border: none;
 }
 
 h3 {
-    font-size: 5rem;
+    font-size: 7rem;
 }
