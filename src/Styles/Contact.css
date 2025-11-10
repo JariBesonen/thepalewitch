@@ -1,6 +1,12 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .contact-page-wrapper {
     width: 100vw;
-    height: 90vh;
+    height: 100vh;
     background-color: black;
     display: flex;
     align-items: center;
@@ -41,4 +47,25 @@ label {
 
 h3 {
     font-size: 7rem;
+}
+
+@media (max-width: 600px) {
+    .contact-page-wrapper {
+        display: flex;
+        flex-direction: column;
+        height: 95vh;
+        position: absolute;
+        top: 5vh;
+    }
+
+    h2 {
+        font-size: 0.5rem;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 90%;
+        display: flex;
+
+    }
 }

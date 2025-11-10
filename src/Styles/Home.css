@@ -3,8 +3,8 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
- 
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 .homepage-wrapper {
@@ -51,7 +51,7 @@
 .hero-video-info button {
   width: 15rem;
   height: 3.5rem;
-    background-color: rgb(99, 0, 0);
+  background-color: rgb(99, 0, 0);
   font-size: 1.3rem;
   border: none;
 }
@@ -83,7 +83,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  
 }
 
 .call-to-action-wrapper h3 {
@@ -117,7 +116,9 @@
   justify-content: space-between;
 }
 
-.newsletter-wrapper h3, .newsletter-wrapper h4, .newsletter-wrapper input {
+.newsletter-wrapper h3,
+.newsletter-wrapper h4,
+.newsletter-wrapper input {
   margin-bottom: 6rem;
 }
 
@@ -130,4 +131,62 @@
   width: 20rem;
   color: black;
   font-size: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    height: 50rem;
+  }
+
+  .hero-video-wrapper {
+    height: 30%;
+    width: 90%;
+  }
+
+  .hero-video-info {
+    width: 90%;
+    height: 40%;
+  }
+
+.img-carousel-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 60rem;
+}
+
+.carousel-imgs {
+  width: 90%;
+  height: 30%;
+}
+
+.call-to-action-wrapper {
+  height: 50rem;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.newsletter-wrapper {
+  background-color: rgb(0, 0, 0);
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.newsletter-wrapper h3 {
+  text-align: center;
+}
+
+.support-wrapper {
+  width: 90%;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 }

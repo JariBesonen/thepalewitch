@@ -29,7 +29,7 @@ nav a {
 
 /* Title */
 nav h1 {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
   color: white;
   margin: 0;
   text-decoration: none;
@@ -39,7 +39,7 @@ nav h1 {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
   padding: 0;
   margin: 0;
 }
@@ -62,7 +62,7 @@ nav ul li a {
   }
 
   nav h1 {
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-decoration: none;
   }
 
@@ -71,7 +71,7 @@ nav ul li a {
   }
 
   nav ul li a {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   
