@@ -23,11 +23,16 @@ nav {
   z-index: 1000;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 /* Title */
 nav h1 {
-  font-size: 1.2rem;
+  font-size: 1.7rem;
   color: white;
   margin: 0;
+  text-decoration: none;
 }
 
 /* Nav links */
@@ -42,26 +47,12 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: white;
-  font-size: 1rem;
+  font-size: 1.6rem;
   position: relative;
   transition: color 0.2s ease;
 }
 
-/* Underline hover for desktop */
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background-color: white;
-  transition: width 0.3s ease;
-}
 
-nav ul li a:hover::after {
-  width: 100%;
-}
 
 /* --- RESPONSIVE STYLES --- */
 @media (max-width: 600px) {
@@ -71,7 +62,8 @@ nav ul li a:hover::after {
   }
 
   nav h1 {
-    font-size: 1rem;
+    font-size: 2rem;
+    text-decoration: none;
   }
 
   nav ul {
@@ -79,17 +71,19 @@ nav ul li a:hover::after {
   }
 
   nav ul li a {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
   }
+
+  
 }
 
 @media (min-width: 1200px) {
   nav h1 {
-    font-size: 1.5rem;
+    font-size: 2.8rem;
   }
 
   nav ul li a {
-    font-size: 1.1rem;
+    font-size: 2.2rem;
   }
 
   nav ul {
