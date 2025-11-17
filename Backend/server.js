@@ -18,6 +18,20 @@ app.use(
 
 const PORT = process.env.PORT || 3000;
 
+
+const pool = require("./db");
+
+app.get("/api/test-db", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT NOW()");
+    res.json(result.rows);
+  } catch (err) {
+    console.error("DB TEST ERROR:", err);
+    res.status(500).json({ error: "db test failed" });
+  }
+});
+
+
 app.use(express.json());
 
 // Health check
