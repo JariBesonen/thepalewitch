@@ -9,16 +9,25 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://thepalewitch.com",
-  "https://thepalewitch.vercel.app",
-  "https://thepalewitch-git-main-jari-besonens-projects.vercel.app",
-  "https://thepalewitch-7f39pk6k7-jari-besonens-projects.vercel.app", // <-- new one
 ];
 
 app.use(
   cors({
-    origin: allowedOrigins,
+    origin: (origin, callback) => {
+      if (!origin) return callback(null, true); // allow Postman, curl, etc.
+
+      const isAllowed =
+        allowedOrigins.includes(origin) || origin.endsWith(".vercel.app");
+
+      if (isAllowed) {
+        return callback(null, true);
+      }
+
+      return callback(new Error("Not allowed by CORS"));
+    },
   })
 );
+
 
 const PORT = process.env.PORT || 3000;
 
