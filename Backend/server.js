@@ -1,18 +1,18 @@
+// Backend/server.js
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
 
-// Correct CORS placement AFTER app is created
 app.use(
   cors({
     origin: [
-      "http://localhost:5173", // dev
+      "http://localhost:5173",
       "https://thepalewitch.com",
       "https://thepalewitch.vercel.app",
-      "https://thepalewitch-git-main-jari-besonens-projects.vercel.app"
-    ]
+      "https://thepalewitch-git-main-jari-besonens-projects.vercel.app",
+    ],
   })
 );
 
@@ -29,7 +29,6 @@ app.get("/api/health", (req, res) => {
 const DetailRouter = require("./Routers/DetailRouter");
 app.use("/api/details", DetailRouter);
 
-// Important: no hardcoded localhost here
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });

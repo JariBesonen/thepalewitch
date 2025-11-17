@@ -1,7 +1,11 @@
+// Backend/Routers/DetailRouter.js
 const express = require("express");
-const Router = express.Router();
-const DetailController = require("../Controllers/DetailController");
+const router = express.Router();
 
-Router.get("/getHeroGameDetails", DetailController.getHeroGameDetails);
+// Destructure the function from the controller export
+const { getHeroGameDetails } = require("../Controllers/DetailController");
 
-module.exports = Router;
+// GET /api/details/getHeroGameDetails
+router.get("/getHeroGameDetails", getHeroGameDetails);
+
+module.exports = router;

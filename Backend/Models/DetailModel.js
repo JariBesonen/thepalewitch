@@ -1,4 +1,5 @@
-const { Pool, pool } = require("../db.js");
+// Backend/Models/DetailModel.js
+const pool = require("../db.js");
 
 const getHeroGameDetailsInDb = async () => {
   const query = "SELECT * FROM details WHERE id = 1";
