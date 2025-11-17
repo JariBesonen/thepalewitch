@@ -1,5 +1,3 @@
-const { getHeroGameDetailsInDb } = require("../Models/DetailModel");
-
 const getHeroGameDetails = async (req, res) => {
   try {
     const gameDetails = await getHeroGameDetailsInDb();
@@ -10,10 +8,9 @@ const getHeroGameDetails = async (req, res) => {
     }
     return res.status(200).json(gameDetails);
   } catch (error) {
+    console.error("getHeroGameDetails ERROR:", error); // 👈 add this
     return res
       .status(500)
       .json({ error: "error with getHeroGameDetails in controller" });
   }
 };
-
-module.exports = { getHeroGameDetails };
