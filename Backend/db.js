@@ -1,5 +1,6 @@
 // Backend/db.js
 const { Pool } = require("pg");
+const dns = require("dns");
 require("dotenv").config();
 
 const dbUrl = process.env.DATABASE_URL;
@@ -15,10 +16,15 @@ if (!dbUrl) {
   }
 }
 
+// Force IPv4 lookup so we don't hit the IPv6 (2600:...) address
 const pool = new Pool({
   connectionString: dbUrl,
   ssl: {
     rejectUnauthorized: false, // required for Supabase
+  },
+  lookup: (hostname, options, callback) => {
+    // Ignore options pg passes, always resolve IPv4 only
+    return dns.lookup(hostname, { family: 4, all: false }, callback);
   },
 });
 
