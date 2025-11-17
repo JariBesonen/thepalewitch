@@ -11,7 +11,10 @@ function Home() {
     const getHeroGameDetails = async () => {
       console.log("loading");
       try {
-        const response = await fetch("/api/details/getHeroGameDetails");
+        const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/details/getHeroGameDetails`
+);
+
         const data = await response.json();
         if (!response.ok) {
           throw new Error("error");
