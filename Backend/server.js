@@ -9,8 +9,8 @@ app.get("/api/health", (req, res) => {
 });
 
 //Routes
-// const DetailRouter = require('./Routers/DetailRouter');
-// app.use("/api", DetailRouter);
+const DetailRouter = require('./Routers/DetailRouter');
+app.use("/api/details", DetailRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on http://localhost:${PORT}`);
