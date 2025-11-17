@@ -5,14 +5,18 @@ require("dotenv").config();
 
 const app = express();
 
+
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://thepalewitch.com",
+  "https://thepalewitch.vercel.app",
+  "https://thepalewitch-git-main-jari-besonens-projects.vercel.app",
+  "https://thepalewitch-7f39pk6k7-jari-besonens-projects.vercel.app", // <-- new one
+];
+
 app.use(
   cors({
-    origin: [
-      "http://localhost:5173",
-      "https://thepalewitch.com",
-      "https://thepalewitch.vercel.app",
-      "https://thepalewitch-git-main-jari-besonens-projects.vercel.app",
-    ],
+    origin: allowedOrigins,
   })
 );
 
