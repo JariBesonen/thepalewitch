@@ -7,28 +7,26 @@ function Home() {
   const [gameDes, setGameDes] = useState("");
   const [error, setError] = useState(null);
   const location = useLocation();
-  useEffect(() => {
-    const getHeroGameDetails = async () => {
-      console.log("loading");
-      try {
-        const response = await fetch(
-  `${import.meta.env.VITE_API_URL}/api/details/getHeroGameDetails`
-);
-
-        const data = await response.json();
-        if (!response.ok) {
-          throw new Error("error");
-        }
-        setGameTitle(data[0].gametitle);
-        setGameDes(data[0].gamedes);
-      } catch (error) {
-        setError(error);
-      }
-    };
-    if (location.pathname === "/") {
-      getHeroGameDetails();
+useEffect(() => {
+  const getHeroGameDetails = async () => {
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/details/getHeroGameDetails`
+      );
+      const data = await response.json();
+      if (!response.ok) throw new Error("error");
+      setGameTitle(data[0].gametitle);
+      setGameDes(data[0].gamedes);
+    } catch (error) {
+      setError(error);
     }
-  }, [location.pathname === "/"]);
+  };
+
+  if (location.pathname === "/") {
+    getHeroGameDetails();
+  }
+}, [location.pathname]); // instead of [location.pathname === "/"]
+
 
   return (
     <div className="homepage-wrapper">
