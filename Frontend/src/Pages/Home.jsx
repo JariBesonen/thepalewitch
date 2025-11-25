@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Home.css";
+
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 function Home() {

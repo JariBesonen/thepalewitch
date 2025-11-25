@@ -3,9 +3,12 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-    "Lucida Sans", Arial, sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 
 .homepage-wrapper {
   width: 100%;
@@ -45,10 +48,12 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  font-family: Lora;
 }
 
 .hero-video-info h2 {
   font-size: 3rem;
+  font-family: Cinzel;
 }
 
 .hero-video-info span {
@@ -59,9 +64,10 @@
 .hero-video-info button {
   width: 12rem;
   height: 2.5rem;
-  background-color: red;
+  background-color: rgb(0, 163, 163);
   border: none;
   font-size: 1.4rem;
+  color: black;
 }
 
 .img-carousel-wrapper {
@@ -89,6 +95,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  font-family: Lora;
 }
 
 .newsletter-wrapper {
@@ -117,23 +124,31 @@
 .call-to-action-wrapper h3 {
   font-size: 3rem;
   text-align: center;
+  font-family: Cinzel;
 }
 
 .call-to-action-wrapper h4 {
   font-size: 2rem;
+  font-weight: 400;
+  font-family: Lora;
 }
 
 .call-to-action-wrapper input {
   width: 80%;
   height: 2.5rem;
+  color: black;
+  font-size: 1.3rem;
+  padding-left: 0.5rem;
 }
 
 .call-to-action-wrapper button {
   width: 10rem;
   height: 2.5rem;
-  background-color: red;
+  color: black;
+  background-color: rgb(0, 163, 163);
   border: none;
   font-size: 1.4rem;
+  font-family: Lora;
 }
 
 @media (min-width: 600px) {
@@ -189,9 +204,10 @@
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: red;
+    background-color: rgb(0, 163, 163);
     border: none;
     font-size: 1.4rem;
+    color: black;
   }
 
   .img-carousel-wrapper {
@@ -261,9 +277,10 @@
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: red;
+    background-color: rgb(0, 163, 163);
     border: none;
     font-size: 1.4rem;
+    color: black;
   }
 }
 
@@ -320,9 +337,16 @@
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: red;
+    background-color: rgb(0, 163, 163);
     border: none;
     font-size: 1.4rem;
+    transition: background-color 0.1s ease;
+    color: black;
+  }
+
+  .hero-video-info button:hover {
+    background-color: rgb(156, 253, 248);
+    cursor: pointer;
   }
 
   .img-carousel-wrapper {
@@ -392,9 +416,15 @@
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: red;
+    background-color: rgb(0, 163, 163);
     border: none;
     font-size: 1.4rem;
+    transition: background-color 0.1s ease;
+    color: black;
+  }
+
+  .call-to-action-wrapper button:hover {
+    background-color: rgb(156, 253, 248);
   }
 }
 
@@ -451,9 +481,18 @@
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: red;
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgb(0, 163, 163);
     border: none;
     font-size: 1.4rem;
+    color: black;
+    transition: background-color 0.1s ease;
+  }
+
+  .hero-video-info button:hover {
+    cursor: pointer;
+    background-color: rgb(156, 253, 248);
+    animation-delay: 2;
   }
 
   .img-carousel-wrapper {
@@ -523,8 +562,15 @@
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: red;
+    background-color: rgb(0, 163, 163);
     border: none;
+    color: black;
     font-size: 1.4rem;
+    transition: background-color 0.1s ease;
+  }
+
+  .call-to-action-wrapper button:hover {
+    cursor: pointer;
+    background-color: rgb(156, 253, 248);
   }
 }

@@ -6,10 +6,15 @@ import Contact from "./Pages/Contact";
 import Support from "./Pages/Support";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import SmoothScroll from "./SmoothScroll";
+
+
+
 function App() {
   return (
     <Router>
       <Navbar />
+      <SmoothScroll />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />

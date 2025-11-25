@@ -17,10 +17,12 @@
 
 .support-page-wrapper h2 {
   font-size: 2rem;
+  font-family: Cinzel;
 }
 
 .support-page-wrapper span {
   font-size: 1.3rem;
+  font-family: Lora;
 }
 
 @media (min-width: 600px) {
