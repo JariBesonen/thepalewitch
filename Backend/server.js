@@ -5,11 +5,7 @@ require("dotenv").config();
 
 const app = express();
 
-
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://thepalewitch.com",
-];
+const allowedOrigins = ["http://localhost:5173", "https://thepalewitch.com"];
 
 app.use(
   cors({
@@ -28,9 +24,7 @@ app.use(
   })
 );
 
-
 const PORT = process.env.PORT || 3000;
-
 
 const pool = require("./db");
 
@@ -43,7 +37,6 @@ app.get("/api/test-db", async (req, res) => {
     res.status(500).json({ error: "db test failed" });
   }
 });
-
 
 app.use(express.json());
 
