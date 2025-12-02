@@ -9,10 +9,10 @@ function Home() {
   const [error, setError] = useState(null);
   const location = useLocation();
   useEffect(() => {
-    const getHeroGameDetails = async () => {
+    const loadHeroSection = async () => {
       try {
         const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/details/getHeroGameDetails`
+          `${import.meta.env.VITE_API_URL}/api/details/hero-section`
         );
         // process.env.VITE_API_URL//api/details/getHeroGameDetails
         const data = await response.json();
@@ -25,7 +25,7 @@ function Home() {
     };
 
     if (location.pathname === "/") {
-      getHeroGameDetails();
+      loadHeroSection();
     }
   }, [location.pathname]); // instead of [location.pathname === "/"]
 
