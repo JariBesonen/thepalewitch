@@ -1,9 +1,9 @@
 // Backend/Controllers/DetailController.js
-const { getHeroGameDetailsInDb } = require("../Models/DetailModel");
+const { getHeroSection } = require("../Models/DetailModel");
 
-const getHeroGameDetails = async (req, res) => {
+const getHeroSectionController = async (req, res) => {
   try {
-    const gameDetails = await getHeroGameDetailsInDb();
+    const gameDetails = await getHeroSection();
 
     if (!gameDetails || gameDetails.length === 0) {
       return res
@@ -20,4 +20,4 @@ const getHeroGameDetails = async (req, res) => {
   }
 };
 
-module.exports = { getHeroGameDetails };
+module.exports = { getHeroSectionController };
