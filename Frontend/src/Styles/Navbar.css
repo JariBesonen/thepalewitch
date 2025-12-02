@@ -56,6 +56,10 @@ nav ul li a {
   font-weight: 200;
 }
 
+.nav-login-btn {
+  color: black;
+}
+
 /* --- RESPONSIVE STYLES --- */
 @media (min-width: 600px) {
   nav {

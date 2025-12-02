@@ -6,6 +6,8 @@ import Contact from "./Pages/Contact";
 import Support from "./Pages/Support";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import Register from "./Pages/Register";
+import Login from "./Pages/Login";
 import SmoothScroll from "./SmoothScroll";
 
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
       <Footer />
     </Router>
