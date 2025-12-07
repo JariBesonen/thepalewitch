@@ -2,6 +2,8 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
+const helmet = require("helmet");
+app.use(helmet());
 
 const app = express();
 
@@ -41,9 +43,9 @@ app.get("/api/test-db", async (req, res) => {
 app.use(express.json());
 
 //imported routes
-const authRouter = require('./Routers/authRouter');
+const authRouter = require("./Routers/authRouter");
 //routes
-app.use('/api/users', authRouter );
+app.use("/api/users", authRouter);
 
 // Health check
 app.get("/api/health", (req, res) => {
