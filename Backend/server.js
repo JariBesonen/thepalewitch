@@ -4,6 +4,7 @@ const cors = require("cors");
 require("dotenv").config();
 const helmet = require("helmet");
 app.use(helmet());
+app.disable("x-powered-by");
 
 const app = express();
 
