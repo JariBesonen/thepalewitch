@@ -40,6 +40,11 @@ app.get("/api/test-db", async (req, res) => {
 
 app.use(express.json());
 
+//imported routes
+const authRouter = require('./Routers/authRouter');
+//routes
+app.use('/api/users', authRouter );
+
 // Health check
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
@@ -50,5 +55,5 @@ const DetailRouter = require("./Routers/DetailRouter");
 app.use("/api/details", DetailRouter);
 
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+  console.log(`Server is listening on port http://localhost:${PORT}`);
 });

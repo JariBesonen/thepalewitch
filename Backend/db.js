@@ -21,11 +21,7 @@ const pool = new Pool({
   connectionString: dbUrl,
   ssl: {
     rejectUnauthorized: false, // required for Supabase
-  },
-  lookup: (hostname, options, callback) => {
-    // Ignore options pg passes, always resolve IPv4 only
-    return dns.lookup(hostname, { family: 4, all: false }, callback);
-  },
+  }
 });
 
 module.exports = pool;
