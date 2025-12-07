@@ -1,11 +1,11 @@
 // Backend/server.js
 const express = require("express");
+const app = express();
+const helmet = require("helmet");
 const cors = require("cors");
 require("dotenv").config();
-const helmet = require("helmet");
-const app = express();
-app.use(helmet());
 app.disable("x-powered-by");
+app.use(helmet());
 
 const allowedOrigins = ["http://localhost:5173", "https://thepalewitch.com"];
 
