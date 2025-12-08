@@ -6,7 +6,7 @@ const cors = require("cors");
 require("dotenv").config();
 app.disable("x-powered-by");
 app.use(helmet());
-
+app.use(express.json());
 const allowedOrigins = ["http://localhost:5173", "https://thepalewitch.com"];
 
 app.use(
@@ -39,8 +39,6 @@ app.get("/api/test-db", async (req, res) => {
     res.status(500).json({ error: "db test failed" });
   }
 });
-
-app.use(express.json());
 
 //imported routes
 const authRouter = require("./Routers/authRouter");
