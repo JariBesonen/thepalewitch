@@ -13,4 +13,10 @@ const userExists = async (username) => {
   return results.rows;
 };
 
-module.exports = { registerUser, userExists };
+const loginUser = async (username) => {
+  const query = "SELECT * FROM users WHERE username = $1";
+  const results = await pool.query(query, [username]);
+  return results.rows[0];
+};
+
+module.exports = { registerUser, userExists, loginUser };
