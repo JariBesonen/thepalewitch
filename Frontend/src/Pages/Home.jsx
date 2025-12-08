@@ -7,6 +7,7 @@ function Home() {
   const [gameTitle, setGameTitle] = useState("");
   const [gameDes, setGameDes] = useState("");
   const [error, setError] = useState(null);
+  const [tokenTest, setTokenTest] = useState(false);
   const location = useLocation();
   useEffect(() => {
     const loadHeroSection = async () => {
@@ -28,6 +29,21 @@ function Home() {
       loadHeroSection();
     }
   }, [location.pathname]); // instead of [location.pathname === "/"]
+
+  useEffect(() => {
+    const tokenExist = localStorage.getItem("token");
+    if (tokenExist) {
+      console.log("token found");
+      setTokenTest(true);
+     
+        let colors = document.getElementsByClassName("hero-video-wrapper")[0];
+        colors.style.backgroundColor = "red";
+        console.log("colors");
+    
+    } else {
+      console.log("token not found");
+    }
+  }, [location.pathname === "/"]);
 
   return (
     <div className="homepage-wrapper">

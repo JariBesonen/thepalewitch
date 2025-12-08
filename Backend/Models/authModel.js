@@ -2,15 +2,15 @@ const pool = require("../db.js");
 
 const registerUser = async (username, password) => {
   const query =
-    "INSERT INTO public.users (username, password) VALUES ($1, $2) RETURNING *";
+    "INSERT INTO users (username, password) VALUES ($1, $2) RETURNING *";
   const results = await pool.query(query, [username, password]);
   return results.rows[0];
 };
 
 const userExists = async (username) => {
-  const query = "SELECT * FROM public.users WHERE username = $1";
+  const query = "SELECT * FROM users WHERE username = $1";
   const results = await pool.query(query, [username]);
-  return results.rows;
+  return results.rows[0];
 };
 
 const loginUser = async (username) => {

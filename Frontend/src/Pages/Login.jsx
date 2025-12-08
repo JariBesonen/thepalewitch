@@ -1,8 +1,9 @@
-import React from "react";
 import { useState } from "react";
 import "../Styles/Login.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Login() {
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -21,7 +22,13 @@ function Login() {
         }
       );
       const data = await response.json();
+      console.log(`Welcome ${data.user.username}`);
       console.log(data);
+      setUsername("");
+      setPassword("");
+      localStorage.setItem('token', data.token);
+      
+      navigate("/");
     } catch (error) {
       setError(error);
     }
