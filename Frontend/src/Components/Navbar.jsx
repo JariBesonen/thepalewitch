@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import Logout from "../Components/Logout";
+import { useNavigate, useLocation } from "react-router-dom";
 function Navbar() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+
+  useEffect(() => {
+    let isUserLoggedIn = localStorage.getItem("token");
+    if (isUserLoggedIn) {
+      setIsLoggedIn(true);
+    }
+  }, [location.pathname === "/"]);
 
   const handleLogout = () => {
     setIsLoggedIn(false);
+    navigate("/");
+
   };
 
   return (
@@ -28,7 +40,7 @@ function Navbar() {
 
         {isLoggedIn ? (
           <li>
-            <Logout onLogout={handleLogout} />
+            <Logout onLogoutSuccess={handleLogout} />
           </li>
         ) : (
           <li>

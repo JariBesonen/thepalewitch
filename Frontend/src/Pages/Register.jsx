@@ -2,27 +2,37 @@ import React from "react";
 import { useState } from "react";
 import "../Styles/Register.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 function Register() {
+  const navigate = useNavigate();
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleRegisterUser = async (e) => {
     e.preventDefault();
-console.log("VITE_API_URL IS:", import.meta.env.VITE_API_URL);
+    console.log("VITE_API_URL IS:", import.meta.env.VITE_API_URL);
 
     try {
       const response = await fetch(
-          `${import.meta.env.VITE_API_URL}/api/users/register`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ username, password }), //curly brackets?
-      });
+        `${import.meta.env.VITE_API_URL}/api/users/register`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ username, password }), //curly brackets?
+        }
+      );
 
       const data = await response.json();
-      console.log(data);
+      if (response.ok) {
+        console.log(data);
+        setUsername("");
+        setPassword("");
+      }
+
+      navigate("/login");
     } catch (error) {
       setError(error);
       console.log(error.message);

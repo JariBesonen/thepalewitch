@@ -1,4 +1,9 @@
 .logout-btn {
-    color: black;
-    font-family: Cinzel;
+  color: black;
+  font-family: Cinzel;
+  font-size: 2rem;
+}
+
+.logout-btn:hover {
+  cursor: pointer;
 }

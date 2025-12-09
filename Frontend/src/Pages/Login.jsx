@@ -22,12 +22,14 @@ function Login() {
         }
       );
       const data = await response.json();
-      console.log(`Welcome ${data.user.username}`);
-      console.log(data);
-      setUsername("");
-      setPassword("");
-      localStorage.setItem('token', data.token);
-      
+      if (!response.ok) {
+        throw new Error("response was not ok");
+      } else if (response.ok) {
+        console.log(`Welcome ${data.user.username}`);
+        setUsername("");
+        setPassword("");
+        localStorage.setItem("token", data.token);
+      }
       navigate("/");
     } catch (error) {
       setError(error);
