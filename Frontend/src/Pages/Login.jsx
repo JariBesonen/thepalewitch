@@ -7,6 +7,7 @@ function Login() {
   const [error, setError] = useState(null);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+console.log("🌐 FRONTEND API URL:", import.meta.env.VITE_API_URL);
 
   const handleLogin = async (e) => {
     e.preventDefault();
