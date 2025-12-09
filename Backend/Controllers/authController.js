@@ -1,7 +1,6 @@
-const { registerUser, userExists, loginUser } = require("../Models/authModel");
+const { registerUser, userExists } = require("../Models/authModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
 
 const registerUserController = async (req, res) => {
   const { username, password } = req.body;
@@ -49,10 +48,11 @@ const loginUserController = async (req, res) => {
       return res.status(400).json({ error: "passwords did not match" });
     }
 
-    const token = jwt.sign({ id: usernameExists.id }, process.env.JWT_SECRET, { expiresIn: "1h" });
-   
+    const token = jwt.sign({ id: usernameExists.id }, process.env.JWT_SECRET, {
+      expiresIn: "1h",
+    });
 
-    return res.status(200).json({user: usernameExists, token});
+    return res.status(200).json({ user: usernameExists, token });
   } catch (error) {
     res.status(500).json({ error: "error with loginUserController" });
   }
