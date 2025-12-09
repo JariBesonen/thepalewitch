@@ -18,22 +18,24 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 1rem;
   z-index: 1000;
 }
 
 nav a {
   text-decoration: none;
   font-family: Cinzel;
-  
 }
 
 /* Title */
-nav h1 {
-  font-size: 1rem;
+.long-h1 {
+  display: none;
+}
+.short-h1 {
+  font-size: 1.2rem;
   font-weight: 500;
   color: rgb(0, 0, 0);
-  margin-right: 0.5;
+  margin-right: 0.5rem;
   text-decoration: none;
   font-family: Cinzel;
 }
@@ -67,11 +69,18 @@ nav ul li a {
     padding: 0 1rem;
   }
 
-  nav h1 {
-    font-size: 1.5rem;
+  .long-h1 {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-right: 0.5rem;
     text-decoration: none;
+    font-family: Cinzel;
   }
-
+  .short-h1 {
+    display: none;
+  }
   nav ul {
     gap: 1rem;
   }
@@ -82,8 +91,17 @@ nav ul li a {
 }
 
 @media (min-width: 900px) {
-  nav h1 {
-    font-size: 2.8rem;
+ .long-h1 {
+    display: block;
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-right: 0.5rem;
+    text-decoration: none;
+    font-family: Cinzel;
+  }
+  .short-h1 {
+    display: none;
   }
 
   nav ul li a {
@@ -96,8 +114,17 @@ nav ul li a {
 }
 
 @media (min-width: 1200px) {
-  nav h1 {
-    font-size: 2.8rem;
+  .long-h1 {
+    display: block;
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: rgb(0, 0, 0);
+    margin-right: 0.5rem;
+    text-decoration: none;
+    font-family: Cinzel;
+  }
+  .short-h1 {
+    display: none;
   }
 
   nav ul li a {
