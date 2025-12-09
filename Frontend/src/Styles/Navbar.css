@@ -19,6 +19,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
+  padding: 0 0.5rem;
 }
 
 nav a {
@@ -52,7 +53,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-size: 1rem;
+  font-size: 1.1rem;
   position: relative;
   transition: color 0.2s ease;
   font-weight: 200;
