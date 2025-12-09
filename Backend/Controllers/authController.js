@@ -28,7 +28,7 @@ const registerUserController = async (req, res) => {
 };
 
 const loginUserController = async (req, res) => {
-  console.log("LOGIN BODY:", req.body);
+  
 
   const { username, password } = req.body;
   if (!username || !password) {

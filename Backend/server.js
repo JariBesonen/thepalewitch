@@ -1,11 +1,12 @@
 // Backend/server.js
-console.log("🔥 RUNNING UPDATED SERVER.JS 🔥");
 
+require("dotenv").config();
 const express = require("express");
 const app = express();
 const helmet = require("helmet");
 const cors = require("cors");
-require("dotenv").config();
+const authRouter = require("./Routers/authRouter");
+const DetailRouter = require("./Routers/DetailRouter");
 
 app.disable("x-powered-by");
 
@@ -21,10 +22,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // -----------------------------
 // 2. CORS (must come BEFORE Helmet)
 // -----------------------------
-const allowedOrigins = [
-  "http://localhost:5173",
-  "https://thepalewitch.com"
-];
+const allowedOrigins = ["http://localhost:5173", "https://thepalewitch.com"];
 
 app.use(
   cors({
@@ -54,14 +52,6 @@ app.use(
 );
 
 // -----------------------------
-// 4. Debug Middleware (optional, but helpful)
-// -----------------------------
-app.use((req, res, next) => {
-  console.log(`REQUEST: ${req.method} ${req.url}`);
-  next();
-});
-
-// -----------------------------
 // 5. Database + Routes
 // -----------------------------
 const pool = require("./db");
@@ -77,18 +67,14 @@ app.get("/api/test-db", async (req, res) => {
   }
 });
 
-// Auth routes
-const authRouter = require("./Routers/authRouter");
+// ROUTES
 app.use("/api/users", authRouter);
+app.use("/api/details", DetailRouter);
 
 // Health check
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok" });
 });
-
-// Game details routes
-const DetailRouter = require("./Routers/DetailRouter");
-app.use("/api/details", DetailRouter);
 
 // -----------------------------
 // 6. Start Server
