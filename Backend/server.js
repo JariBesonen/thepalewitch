@@ -1,4 +1,6 @@
 // Backend/server.js
+console.log("🔥 RUNNING UPDATED SERVER.JS 🔥");
+
 const express = require("express");
 const app = express();
 const helmet = require("helmet");
