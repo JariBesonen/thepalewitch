@@ -22,7 +22,7 @@
   justify-content: space-around;
 }
 .support-page-wrapper h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-family: Cinzel;
   text-align: center;
 }
@@ -62,7 +62,7 @@
   }
 
   .support-page-wrapper h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 
   .support-page-wrapper span {
