@@ -20,17 +20,17 @@
 
 .login-form h2 {
   color: white;
-  font-size: 2.4rem;
+  font-size: 2.7rem;
 }
 
 .login-form label {
-  color: white;
+ color: white;
   font-size: 1.4rem;
 }
 
 .login-form input {
   height: 2rem;
-  width: 70%;
+  width: 65%;
   font-size: 1.2rem;
   padding-left: 0.5rem;
   border: none;
