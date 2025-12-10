@@ -7,7 +7,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 function Navbar() {
   const location = useLocation();
   const navigate = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem('token'));
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
     let isUserLoggedIn = localStorage.getItem("token");
@@ -19,7 +19,6 @@ function Navbar() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     navigate("/");
-
   };
 
   return (
@@ -32,9 +31,7 @@ function Navbar() {
         <li>
           <Link to={"/games"}>games</Link>
         </li>
-        <li>
-          <Link to={"/contact"}>contact</Link>
-        </li>
+
         <li>
           <Link to={"/support"}>support</Link>
         </li>

@@ -1,12 +1,9 @@
 import React from "react";
 import "../Styles/Footer.css";
 function Footer() {
-  
-  
-  
   return (
     <footer>
-      <p>@thepalewitch.com</p>
+      <p>@thepalewitchgames@gmail.com</p>
     </footer>
   );
 }

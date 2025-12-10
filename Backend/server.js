@@ -7,7 +7,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const authRouter = require("./Routers/authRouter");
 const DetailRouter = require("./Routers/DetailRouter");
-const contactRouter = require("./Routers/contactRouter");
+
 
 
 app.disable("x-powered-by");
@@ -70,7 +70,7 @@ app.get("/api/test-db", async (req, res) => {
 // ROUTES
 app.use("/api/users", authRouter);
 app.use("/api/details", DetailRouter);
-app.use("/api/contact", contactRouter);
+
 
 // Health check
 app.get("/api/health", (req, res) => {
