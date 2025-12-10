@@ -17,9 +17,7 @@ app.disable("x-powered-by");
 // -----------------------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-const bodyParser = require("body-parser");
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
 // -----------------------------
 // 2. CORS (must come BEFORE Helmet)
