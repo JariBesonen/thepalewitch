@@ -3,7 +3,7 @@ import "../Styles/Footer.css";
 function Footer() {
   return (
     <footer>
-      <p>@thepalewitchgames@gmail.com</p>
+      <p>thepalewitchgames@gmail.com</p>
     </footer>
   );
 }
