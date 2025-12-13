@@ -7,7 +7,7 @@ const postMessage = async (message) => {
 };
 
 const getMessage = async () => {
-  const query = "SELECT * FROM messages";
+  const query = "SELECT * FROM messages LIMIT 30";
   const results = await pool.query(query);
   return results.rows;
 };

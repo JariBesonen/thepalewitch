@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Styles/Community.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 function Community() {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState("");
   const [results, setResults] = useState([]);
   const location = useLocation();
-  const navigate = useNavigate();
+  
 
   useEffect(() => {
     const displayPosts = async () => {
@@ -26,7 +26,7 @@ function Community() {
     if (location.pathname === "/community") {
       displayPosts();
     }
-  }, [location.pathname === "/community"]);
+  }, [location.pathname]);
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -63,7 +63,8 @@ function Community() {
       <div className="community-post-wrapper">
         {error && <p>{error.message}</p>}
         <div className="community-output-wrapper">
-          {results.length ? (
+         <div className="scroll-box">
+             {results.length ? (
             results.map((result) => (
               <div
                 className="single-post-wrapper"
@@ -75,6 +76,7 @@ function Community() {
           ) : (
             <p>no results..</p>
           )}
+         </div>
         </div>
         <form onSubmit={handlePost} className="community-form">
           <textarea
