@@ -7,8 +7,7 @@ const helmet = require("helmet");
 const cors = require("cors");
 const authRouter = require("./Routers/authRouter");
 const DetailRouter = require("./Routers/DetailRouter");
-
-
+const messageRouter = require("./Routers/messageRouter");
 
 app.disable("x-powered-by");
 
@@ -17,7 +16,6 @@ app.disable("x-powered-by");
 // -----------------------------
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 // -----------------------------
 // 2. CORS (must come BEFORE Helmet)
@@ -70,7 +68,7 @@ app.get("/api/test-db", async (req, res) => {
 // ROUTES
 app.use("/api/users", authRouter);
 app.use("/api/details", DetailRouter);
-
+app.use("/api/message", messageRouter);
 
 // Health check
 app.get("/api/health", (req, res) => {

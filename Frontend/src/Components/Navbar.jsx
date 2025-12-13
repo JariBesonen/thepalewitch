@@ -3,6 +3,7 @@ import { useState } from "react";
 import "../Styles/Navbar.css";
 import { Link } from "react-router-dom";
 import Logout from "../Components/Logout";
+
 import { useNavigate, useLocation } from "react-router-dom";
 function Navbar() {
   const location = useLocation();
@@ -30,6 +31,10 @@ function Navbar() {
       <ul>
         <li>
           <Link to={"/games"}>games</Link>
+        </li>
+
+        <li>
+          <Link to={"/community"}>community</Link>
         </li>
 
         <li>

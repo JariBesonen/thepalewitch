@@ -7,6 +7,7 @@ import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
+import Community from "./Pages/Community";
 import SmoothScroll from "./SmoothScroll";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
+        <Route path="/community" element={<Community />} />
 
         <Route path="/support" element={<Support />} />
         <Route path="/register" element={<Register />} />
