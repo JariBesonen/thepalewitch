@@ -31,7 +31,9 @@ function Login() {
         setPassword("");
         localStorage.setItem("token", data.token);
       }
-      navigate("/");
+    
+     
+      navigate(`/`);
     } catch (error) {
       setError(error);
     }

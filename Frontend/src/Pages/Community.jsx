@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Styles/Community.css";
 import { useLocation } from "react-router-dom";
+
 function Community() {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState("");
   const [results, setResults] = useState([]);
   const location = useLocation();
-  
 
   useEffect(() => {
     const displayPosts = async () => {
@@ -30,6 +30,11 @@ function Community() {
 
   const handlePost = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
+    if (!token) {
+      return console.log("token not found during handlePost frontend");
+    }
+    console.log("frontend token check", token);
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/message/post`,
@@ -37,20 +42,21 @@ function Community() {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
           },
           body: JSON.stringify({ message }),
         }
       );
       if (!response.ok) {
-        console.log(error);
+        console.log(error.message);
       } else {
         const data = await response.json();
         console.log(data);
+       
         setResults(data);
         setMessage("");
         window.location.reload();
       }
-      
     } catch (error) {
       setError(error);
     }
@@ -63,20 +69,18 @@ function Community() {
       <div className="community-post-wrapper">
         {error && <p>{error.message}</p>}
         <div className="community-output-wrapper">
-         <div className="scroll-box">
-             {results.length ? (
-            results.map((result) => (
-              <div
-                className="single-post-wrapper"
-                key={result.id ?? result.message}
-              >
-                <span>{result.message}</span>
-              </div>
-            ))
-          ) : (
-            <p>no results..</p>
-          )}
-         </div>
+          <div className="scroll-box">
+            {results.length ? (
+              results.map((result) => (
+                <div className="single-post-wrapper" key={result.messageid}>
+                  <span>{result.message}</span>
+                  <span>{result.username}</span>
+                </div>
+              ))
+            ) : (
+              <p>no results..</p>
+            )}
+          </div>
         </div>
         <form onSubmit={handlePost} className="community-form">
           <textarea

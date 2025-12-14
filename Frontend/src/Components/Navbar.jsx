@@ -32,19 +32,20 @@ function Navbar() {
         <li>
           <Link to={"/games"}>games</Link>
         </li>
-
-        <li>
-          <Link to={"/community"}>community</Link>
-        </li>
-
         <li>
           <Link to={"/support"}>support</Link>
         </li>
 
         {isLoggedIn ? (
-          <li>
-            <Logout onLogoutSuccess={handleLogout} />
-          </li>
+          <>
+            <li>
+              <Link to={"/community"}>community</Link>
+            </li>
+
+            <li>
+              <Logout onLogoutSuccess={handleLogout} />
+            </li>
+          </>
         ) : (
           <li>
             <Link to={"/login"}>
