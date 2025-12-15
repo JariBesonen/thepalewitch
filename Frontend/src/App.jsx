@@ -12,10 +12,14 @@ import ToggleNav from "./Components/ToggleNav";
 import SmoothScroll from "./SmoothScroll";
 
 function App() {
-  const [isNavOpen, setNavOpen] = useState(true);
+  const [isNavOpen, setNavOpen] = useState(false);
 
   const handleToggleNav = () => {
     setNavOpen((prev) => !prev);
+  };
+
+  const handleCloseNav = () => {
+    setNavOpen(false);
   };
 
   return (
@@ -23,7 +27,7 @@ function App() {
       <SmoothScroll />
       {isNavOpen ? (
         <>
-          <Navbar />
+          <Navbar handleCloseNav={handleCloseNav} />
           <ToggleNav handleToggleNav={handleToggleNav} />
         </>
       ) : (

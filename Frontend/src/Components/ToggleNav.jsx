@@ -2,11 +2,7 @@ import React from "react";
 import "../Styles/ToggleNav.css";
 function ToggleNav({ handleToggleNav }) {
   return (
-    // <span onClick={handleToggleNav} className="x">x</span>
-    // <i onClick={handleToggleNav} className="bi bi-list"></i>
-    // <div className="navbar-icon">
-
-    // </div>
+  
     <svg
       onClick={handleToggleNav}
       xmlns="http://www.w3.org/2000/svg"
