@@ -1,55 +1,50 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../Styles/Navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import Logout from "../Components/Logout";
 
-import { useNavigate, useLocation } from "react-router-dom";
-function Navbar() {
+function Navbar({ handleCloseNav }) {
   const location = useLocation();
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   useEffect(() => {
-    let isUserLoggedIn = localStorage.getItem("token");
-    if (isUserLoggedIn) {
-      setIsLoggedIn(true);
-    }
-  }, [location.pathname === "/"]);
+    setIsLoggedIn(!!localStorage.getItem("token"));
+  }, [location.pathname]);
 
   const handleLogout = () => {
     setIsLoggedIn(false);
     navigate("/");
-    
+    handleCloseNav();
   };
 
   return (
     <nav>
-      <Link to={"/"}>
+      <Link onClick={handleCloseNav} to={"/"}>
         <h1 className="long-h1">home</h1>
         <h1 className="short-h1">Home</h1>
       </Link>
+
       <ul>
         <li>
-          <Link to={"/games"}>games</Link>
+          <Link onClick={handleCloseNav} to={"/games"}>games</Link>
         </li>
         <li>
-          <Link to={"/support"}>support</Link>
+          <Link onClick={handleCloseNav} to={"/support"}>support</Link>
         </li>
 
         {isLoggedIn ? (
           <>
             <li>
-              <Link to={"/community"}>community</Link>
+              <Link onClick={handleCloseNav} to={"/community"}>community</Link>
             </li>
-
             <li>
               <Logout onLogoutSuccess={handleLogout} />
             </li>
           </>
         ) : (
           <li>
-            <Link to={"/login"}>
+            <Link onClick={handleCloseNav} to={"/login"}>
               <span className="nav-login-btn">login</span>
             </Link>
           </li>
