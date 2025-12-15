@@ -11,3 +11,10 @@
     top: 0;
     left: rem; 
 }
+
+
+@media (min-width: 600px) {
+    .nav-icon, .navbar-icon {
+        display: none;
+    }
+}

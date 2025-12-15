@@ -7,3 +7,9 @@
 .logout-btn:hover {
   cursor: pointer;
 }
+
+@media (min-width: 600px) {
+  .logout-btn {
+    font-size: 1.3rem;
+  }
+}

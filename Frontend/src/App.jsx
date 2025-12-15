@@ -18,16 +18,12 @@ function App() {
     setNavOpen((prev) => !prev);
   };
 
-  const handleCloseNav = () => {
-    setNavOpen(false);
-  };
-
   return (
     <Router>
       <SmoothScroll />
       {isNavOpen ? (
         <>
-          <Navbar handleCloseNav={handleCloseNav} />
+          <Navbar />
           <ToggleNav handleToggleNav={handleToggleNav} />
         </>
       ) : (
