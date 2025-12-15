@@ -26,7 +26,7 @@ function Navbar() {
     <nav>
       <Link to={"/"}>
         <h1 className="long-h1">The Pale Witch</h1>
-        <h1 className="short-h1">TPW</h1>
+        <h1 className="short-h1">home</h1>
       </Link>
       <ul>
         <li>

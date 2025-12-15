@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Games from "./Pages/Games";
@@ -8,13 +8,27 @@ import Footer from "./Components/Footer";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Community from "./Pages/Community";
+import ToggleNav from "./Components/ToggleNav";
 import SmoothScroll from "./SmoothScroll";
 
 function App() {
+  const [isNavOpen, setNavOpen] = useState(true);
+
+  const handleToggleNav = () => {
+    setNavOpen((prev) => !prev);
+  };
+
   return (
     <Router>
-      <Navbar />
       <SmoothScroll />
+      {isNavOpen ? (
+        <>
+          <Navbar />
+          <ToggleNav handleToggleNav={handleToggleNav} />
+        </>
+      ) : (
+        <ToggleNav handleToggleNav={handleToggleNav} />
+      )}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />

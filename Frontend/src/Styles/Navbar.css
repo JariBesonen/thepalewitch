@@ -13,13 +13,15 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  height: 4rem;
+  height: 100vh;
   background-color: rgb(211, 218, 218);
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   z-index: 1000;
-  padding: 0 0.5rem;
+  padding-left: 2rem;
+  padding-top: 6rem;
 }
 
 nav a {
@@ -30,12 +32,14 @@ nav a {
 /* Title */
 .long-h1 {
   display: none;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
 }
 .short-h1 {
-  font-size: 1.2rem;
+  font-size: 2.5rem;
   font-weight: 500;
   color: rgb(0, 0, 0);
-
+  margin-bottom: 2rem;
   text-decoration: none;
   font-family: Cinzel;
   letter-spacing: 0.1rem;
@@ -45,7 +49,8 @@ nav a {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 0.5rem;
+  flex-direction: column;
+  gap: 2rem;
   padding: 0;
   margin: 0;
 }
@@ -53,7 +58,7 @@ nav ul {
 nav ul li a {
   text-decoration: none;
   color: rgb(0, 0, 0);
-  font-size: 1.1rem;
+  font-size: 2.5rem;
   position: relative;
   transition: color 0.2s ease;
   font-weight: 200;

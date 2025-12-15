@@ -1,0 +1,13 @@
+.navbar-icon {
+    width: 15rem;
+    height: 15rem;
+    background-color: red;
+    z-index: 5000;
+}
+
+.nav-icon {
+    position: absolute;
+    z-index: 2000;
+    top: 0;
+    left: rem; 
+}
