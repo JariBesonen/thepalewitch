@@ -10,6 +10,7 @@ import Login from "./Pages/Login";
 import Community from "./Pages/Community";
 import ToggleNav from "./Components/ToggleNav";
 import SmoothScroll from "./SmoothScroll";
+import Reply from "./Pages/Reply";
 
 function App() {
   const [isNavOpen, setNavOpen] = useState(window.innerWidth > 600);
@@ -48,6 +49,7 @@ function App() {
         <Route path="/games" element={<Games />} />
         <Route path="/community" element={<Community />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/reply/:id" element={<Reply />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
       </Routes>

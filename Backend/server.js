@@ -8,6 +8,7 @@ const cors = require("cors");
 const authRouter = require("./Routers/authRouter");
 const DetailRouter = require("./Routers/DetailRouter");
 const messageRouter = require("./Routers/messageRouter");
+const commentRouter = require('./Routers/commentRouter');
 
 app.disable("x-powered-by");
 
@@ -69,6 +70,7 @@ app.get("/api/test-db", async (req, res) => {
 app.use("/api/users", authRouter);
 app.use("/api/details", DetailRouter);
 app.use("/api/message", messageRouter);
+app.use('/api/comments', commentRouter);
 
 // Health check
 app.get("/api/health", (req, res) => {

@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import "../Styles/Community.css";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 function Community() {
   const [error, setError] = useState(null);
   const [message, setMessage] = useState("");
   const [results, setResults] = useState([]);
   const location = useLocation();
-
+const navigate = useNavigate();
   useEffect(() => {
     const displayPosts = async () => {
       try {
@@ -75,6 +75,7 @@ function Community() {
                 <div className="single-post-wrapper" key={result.messageid}>
                   <span>{result.message}</span>
                   <span>{result.username}</span>
+                  <button onClick={() => navigate(`/reply/${result.messageid}`)} className="reply-btn">reply</button>
                 </div>
               ))
             ) : (

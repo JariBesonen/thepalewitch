@@ -1,0 +1,75 @@
+.reply-page-wrapper {
+    width: 100%;
+    height: 95vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 5rem;
+    color: white;
+}
+
+.main-post-wrapper {
+    border: 1px solid white;
+    width: 80%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.comments-wrapper {
+    border: 1px solid white;
+    border-top: none;
+    width: 80%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.individual-comment-wrapper {
+    width: 80%;
+    padding: 0.5rem;
+    border: 1px solid white;
+    text-align: center;
+    color: white;
+}
+
+.comment {
+    font-size: 1.4rem;
+    color: white;
+}
+
+.comment-form {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+}
+
+.comment-input {
+    width: 80%;
+    height: 100%;
+    color: black;
+    font-size: 1.3rem;
+    padding-left: 0.5rem;
+}
+
+.comment-btn {
+    width: 20%;
+    height: 100%;
+    color: black;
+    font-size: 1.3rem;
+}
+
