@@ -65,15 +65,12 @@ function Home() {
         </div>
       </div>
       <div className="call-to-action-wrapper">
-        <div className="newsletter-wrapper">
+        <div className="join-community-wrapper">
           <h3>Join the Community</h3>
           <h4>Ask a question or leave a comment</h4>
           <button onClick={joinCommunity}>Join</button>
         </div>
-        <div className="support-wrapper">
-          <h3>Support My Game Dev Journey</h3>
-          <button>Support Me</button>
-        </div>
+       
       </div>
     </div>
   );

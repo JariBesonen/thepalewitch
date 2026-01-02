@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import Games from "./Pages/Games";
-import Support from "./Pages/Support";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
 import Register from "./Pages/Register";
@@ -48,7 +47,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
         <Route path="/community" element={<Community />} />
-        <Route path="/support" element={<Support />} />
+        
         <Route path="/reply/:id" element={<Reply />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

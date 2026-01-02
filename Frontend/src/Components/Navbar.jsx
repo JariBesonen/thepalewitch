@@ -29,9 +29,7 @@ function Navbar({ handleCloseNav }) {
         <li>
           <Link onClick={handleCloseNav} to={"/games"}>games</Link>
         </li>
-        <li>
-          <Link onClick={handleCloseNav} to={"/support"}>support</Link>
-        </li>
+      
 
         {isLoggedIn ? (
           <>

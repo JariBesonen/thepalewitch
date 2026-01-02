@@ -99,7 +99,7 @@ html {
   font-family: Lora;
 }
 
-.newsletter-wrapper {
+.join-community-wrapper {
   height: 25rem;
   width: 90%;
   background-color: rgb(0, 0, 0);
@@ -239,7 +239,7 @@ html {
     justify-content: space-around;
   }
 
-  .newsletter-wrapper {
+  .join-community-wrapper {
     height: 25rem;
     width: 80%;
     background-color: rgb(0, 0, 0);
@@ -378,7 +378,7 @@ html {
     justify-content: space-around;
   }
 
-  .newsletter-wrapper {
+  .join-community-wrapper {
     height: 25rem;
     width: 45%;
     background-color: rgb(0, 0, 0);
@@ -524,7 +524,7 @@ html {
     justify-content: space-around;
   }
 
-  .newsletter-wrapper {
+  .join-community-wrapper {
     height: 25rem;
     width: 35%;
     background-color: rgb(0, 0, 0);
