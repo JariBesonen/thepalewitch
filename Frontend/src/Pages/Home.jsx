@@ -2,13 +2,25 @@ import React from "react";
 import "../Styles/Home.css";
 
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 function Home() {
   const [gameTitle, setGameTitle] = useState("");
   const [gameDes, setGameDes] = useState("");
   const [error, setError] = useState(null);
-
+  const navigate = useNavigate();
   const location = useLocation();
+
+  const joinCommunity = (e) => {
+    e.preventDefault();
+    const accountExist = localStorage.getItem("token");
+    if (!accountExist) {
+      alert("please login/register to join community");
+      navigate("/register");
+    } else {
+      navigate("/community");
+    }
+  };
+
   useEffect(() => {
     const loadHeroSection = async () => {
       try {
@@ -54,10 +66,9 @@ function Home() {
       </div>
       <div className="call-to-action-wrapper">
         <div className="newsletter-wrapper">
-          <h3>Sign Up For Updates</h3>
-          <h4>Email address</h4>
-          <input type="text" />
-          <button>Subscribe</button>
+          <h3>Join the Community</h3>
+          <h4>Ask a question or leave a comment</h4>
+          <button onClick={joinCommunity}>Join</button>
         </div>
         <div className="support-wrapper">
           <h3>Support My Game Dev Journey</h3>
