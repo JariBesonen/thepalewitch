@@ -7,6 +7,9 @@ import Footer from "./Components/Footer";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
 import Community from "./Pages/Community";
+import Profile from "./Pages/Profile";
+import Settings from "./Pages/Settings";
+import Notifications from "./Pages/Notifications";
 import ToggleNav from "./Components/ToggleNav";
 import SmoothScroll from "./SmoothScroll";
 import Reply from "./Pages/Reply";
@@ -47,7 +50,9 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/games" element={<Games />} />
         <Route path="/community" element={<Community />} />
-        
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/settings" element={<Settings />} />
+        <Route path="/notifications" element={<Notifications />} />
         <Route path="/reply/:id" element={<Reply />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

@@ -27,14 +27,22 @@ function Navbar({ handleCloseNav }) {
 
       <ul>
         <li>
-          <Link onClick={handleCloseNav} to={"/games"}>games</Link>
+          <Link onClick={handleCloseNav} to={"/games"}>
+            games
+          </Link>
         </li>
-      
 
         {isLoggedIn ? (
           <>
             <li>
-              <Link onClick={handleCloseNav} to={"/community"}>community</Link>
+              <Link onClick={handleCloseNav} to={"/community"}>
+                community
+              </Link>
+            </li>
+            <li>
+              <Link onClick={handleCloseNav} to={"/profile"}>
+                profile
+              </Link>
             </li>
             <li>
               <Logout onLogoutSuccess={handleLogout} />
