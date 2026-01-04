@@ -11,7 +11,7 @@ import Profile from "./Pages/Profile";
 import Settings from "./Pages/Settings";
 import Notifications from "./Pages/Notifications";
 import ToggleNav from "./Components/ToggleNav";
-import SmoothScroll from "./SmoothScroll";
+
 import Reply from "./Pages/Reply";
 
 function App() {
@@ -41,7 +41,7 @@ function App() {
 
   return (
     <Router>
-      <SmoothScroll />
+    
 
       {isNavOpen && <Navbar handleCloseNav={handleCloseNav} />}
       <ToggleNav handleToggleNav={handleToggleNav} />
