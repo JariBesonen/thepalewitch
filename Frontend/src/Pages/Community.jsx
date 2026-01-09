@@ -8,7 +8,10 @@ function Community() {
   const [message, setMessage] = useState("");
   const [results, setResults] = useState([]);
   const location = useLocation();
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  useEffect(() => {});
+
   useEffect(() => {
     const displayPosts = async () => {
       try {
@@ -27,6 +30,29 @@ const navigate = useNavigate();
       displayPosts();
     }
   }, [location.pathname]);
+
+  const handleDeletePost = async (postId) => {
+    const token = localStorage.getItem("token");
+
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/message/deletePost/${postId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+      const data = await response.json();
+      console.log(data);
+      console.log(data.isOwnersPost);
+      // window.location.reload();
+    } catch (error) {
+      // setDeletePostError(error);
+      console.log(error);
+    }
+  };
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -52,7 +78,7 @@ const navigate = useNavigate();
       } else {
         const data = await response.json();
         console.log(data);
-       
+
         setResults(data);
         setMessage("");
         window.location.reload();
@@ -73,9 +99,26 @@ const navigate = useNavigate();
             {results.length ? (
               results.map((result) => (
                 <div className="single-post-wrapper" key={result.messageid}>
-                  <span>{result.message}</span>
-                  <span>{result.username}</span>
-                  <button onClick={() => navigate(`/reply/${result.messageid}`)} className="reply-btn">reply</button>
+                  <span className="single-post-message">{result.message}</span>
+                  <span>- {result.username}</span>
+                  <div className="post-options-wrapper">
+                    <button
+                      onClick={() => navigate(`/reply/${result.messageid}`)}
+                      className="reply-btn"
+                    >
+                      reply
+                    </button>
+                    <button className="like-message-btn">like</button>
+                    <button
+                      onClick={() => handleDeletePost(result.messageid)}
+                      className="delete-message-btn"
+                    >
+                      delete
+                    </button>
+
+                    <span>5like</span>
+                    <button className="report-message-btn">report</button>
+                  </div>
                 </div>
               ))
             ) : (

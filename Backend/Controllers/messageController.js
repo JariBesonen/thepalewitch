@@ -1,4 +1,8 @@
-const { postMessage, getMessage } = require("../Models/messageModel");
+const {
+  postMessage,
+  getMessage,
+  deleteMessage,
+} = require("../Models/messageModel");
 const jwt = require("jsonwebtoken");
 const postMessageController = async (req, res) => {
   const { message } = req.body;
@@ -7,10 +11,10 @@ const postMessageController = async (req, res) => {
   if (!token) {
     return res.status(400).json({ error: "token is missing" });
   }
-  console.log(token);
+
   const decodedToken = jwt.decode(token);
   const userId = decodedToken.id;
-  console.log(userId);
+
   if (!userId) {
     return res.status(400).json({ error: "token exists must id is missing" });
   }
@@ -26,7 +30,7 @@ const postMessageController = async (req, res) => {
       console.log("newMessage is missing");
       return res.status(500).json({ error: "error with model" });
     }
-    console.log(newMessage);
+
     return res.status(201).json(newMessage);
   } catch (error) {
     return res.status(500).json({ error: "error with messageController" });
@@ -44,5 +48,37 @@ const getMessageController = async (req, res) => {
     return res.status(500).json({ error: "error with getMessageController" });
   }
 };
+const deleteMessageController = async (req, res) => {
+  const { postId } = req.params;
 
-module.exports = { postMessageController, getMessageController };
+  const authHeader = req.headers.authorization;
+  if (!authHeader?.startsWith("Bearer ")) {
+    return res
+      .status(401)
+      .json({ error: "Missing/invalid Authorization header" });
+  }
+
+  const token = authHeader.split(" ")[1];
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET); // ✅ verify
+    const userId = decoded.id; // or decoded.userId depending on your token
+
+    const deleted = await deleteMessage(postId, userId);
+
+    if (!deleted) {
+      // either post doesn't exist OR it exists but isn't theirs
+      return res.status(403).json({ error: "Not allowed to delete this post" });
+    }
+
+    return res.status(200).json({deleted, isOwnersPost: true});
+  } catch (error) {
+    return res.status(401).json({ error: "Invalid token" });
+  }
+};
+
+module.exports = {
+  postMessageController,
+  getMessageController,
+  deleteMessageController,
+};

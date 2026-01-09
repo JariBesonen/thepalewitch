@@ -15,4 +15,15 @@ const getMessage = async () => {
   return results.rows;
 };
 
-module.exports = { postMessage, getMessage };
+const deleteMessage = async (postId, userId) => {
+  const query = `
+    DELETE FROM messages
+    WHERE messageid = $1 AND userid = $2
+    RETURNING *;
+  `;
+  const result = await pool.query(query, [postId, userId]);
+  return result.rows[0]; // undefined if not owned or not found
+};
+
+
+module.exports = { postMessage, getMessage, deleteMessage };
