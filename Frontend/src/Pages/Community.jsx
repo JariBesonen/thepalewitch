@@ -10,7 +10,7 @@ function Community() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  useEffect(() => {});
+
 
   useEffect(() => {
     const displayPosts = async () => {
@@ -31,28 +31,7 @@ function Community() {
     }
   }, [location.pathname]);
 
-  const handleDeletePost = async (postId) => {
-    const token = localStorage.getItem("token");
-
-    try {
-      const response = await fetch(
-        `${import.meta.env.VITE_API_URL}/api/message/deletePost/${postId}`,
-        {
-          method: "DELETE",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-      const data = await response.json();
-      console.log(data);
-      console.log(data.isOwnersPost);
-      // window.location.reload();
-    } catch (error) {
-      // setDeletePostError(error);
-      console.log(error);
-    }
-  };
+  
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -109,12 +88,7 @@ function Community() {
                       reply
                     </button>
                     <button className="like-message-btn">like</button>
-                    <button
-                      onClick={() => handleDeletePost(result.messageid)}
-                      className="delete-message-btn"
-                    >
-                      delete
-                    </button>
+                   
 
                     <span>5like</span>
                     <button className="report-message-btn">report</button>

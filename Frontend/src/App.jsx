@@ -10,6 +10,7 @@ import Community from "./Pages/Community";
 import Profile from "./Pages/Profile";
 import Settings from "./Pages/Settings";
 import Notifications from "./Pages/Notifications";
+import MyPosts from "./Pages/MyPosts";
 import ToggleNav from "./Components/ToggleNav";
 
 import Reply from "./Pages/Reply";
@@ -41,8 +42,6 @@ function App() {
 
   return (
     <Router>
-    
-
       {isNavOpen && <Navbar handleCloseNav={handleCloseNav} />}
       <ToggleNav handleToggleNav={handleToggleNav} />
 
@@ -53,6 +52,7 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/myposts" element={<MyPosts />} />
         <Route path="/reply/:id" element={<Reply />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />

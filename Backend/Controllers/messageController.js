@@ -2,6 +2,7 @@ const {
   postMessage,
   getMessage,
   deleteMessage,
+  displayMyPosts,
 } = require("../Models/messageModel");
 const jwt = require("jsonwebtoken");
 const postMessageController = async (req, res) => {
@@ -71,9 +72,24 @@ const deleteMessageController = async (req, res) => {
       return res.status(403).json({ error: "Not allowed to delete this post" });
     }
 
-    return res.status(200).json({deleted, isOwnersPost: true});
+    return res.status(200).json({ deleted, isOwnersPost: true });
   } catch (error) {
     return res.status(401).json({ error: "Invalid token" });
+  }
+};
+
+const displayMyPostsController = async (req, res) => {
+  const authorization = req.headers.authorization;
+  const token = authorization.split(" ")[1];
+  const decoded = jwt.decode(token);
+  const id = decoded.id;
+  console.log(id);
+  try {
+    const myPosts = await displayMyPosts(id);
+
+    return res.status(200).json(myPosts);
+  } catch (error) {
+    return res.status(500).json({ error: "server error" });
   }
 };
 
@@ -81,4 +97,5 @@ module.exports = {
   postMessageController,
   getMessageController,
   deleteMessageController,
+  displayMyPostsController,
 };

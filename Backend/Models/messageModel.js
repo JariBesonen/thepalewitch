@@ -25,5 +25,11 @@ const deleteMessage = async (postId, userId) => {
   return result.rows[0]; // undefined if not owned or not found
 };
 
+const displayMyPosts = async (id) => {
+  const query =
+    "SELECT users.username, messages.message, messages.messageid, messages.userid FROM users INNER JOIN messages ON users.id = messages.userid WHERE userid = $1;";
+  const result = await pool.query(query, [id]);
+  return result.rows;
+};
 
-module.exports = { postMessage, getMessage, deleteMessage };
+module.exports = { postMessage, getMessage, deleteMessage, displayMyPosts };
