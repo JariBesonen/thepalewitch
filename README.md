@@ -2,9 +2,9 @@ thepalewitch
 
 A full-stack PERN website where users can view updates on upcoming Steam games created by thepalewitch.
 
-🌐 Live Site: https://thepalewitch.com
+Live Site: https://thepalewitch.com
 
-🚀 Tech Stack
+- Tech Stack -
 
 Frontend
 
@@ -24,9 +24,9 @@ PostgreSQL
 
 Vercel (Frontend Deployment)
 
-Render / Supabase (Backend & DB Deployment)
+Render (Backend & DB Deployment)
 
-✨ Features
+- Features -
 
 User authentication (JWT + hashed passwords)
 
@@ -40,11 +40,11 @@ REST-based Express API
 
 Secure PostgreSQL queries
 
-📦 Installation & Setup
-Frontend
-cd Frontend
-npm install
-npm run dev
+- Installation & Setup -
+  Frontend
+  cd Frontend
+  npm install
+  npm run dev
 
 Backend
 cd Backend
