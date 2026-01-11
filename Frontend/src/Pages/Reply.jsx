@@ -10,14 +10,20 @@ function Reply() {
   const [postCommentError, setPostCommentError] = useState(null);
   const postComment = async (e) => {
     e.preventDefault();
+    const token = localStorage.getItem("token");
+    console.log(token);
     try {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/comments/post/${id}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": 'application/json',
-        },
-        body: JSON.stringify({newComment}),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/comments/post/${id}`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify({ newComment }),
+        }
+      );
       const data = await response.json();
       console.log(data);
       window.location.reload();
@@ -51,8 +57,6 @@ function Reply() {
 
   // the post message is the same for every row, so just use the first one
   const postMessage = rows.length > 0 ? rows[0].message : "";
- 
-
 
   return (
     <div className="reply-page-wrapper">
