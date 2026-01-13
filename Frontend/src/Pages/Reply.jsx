@@ -11,7 +11,6 @@ function Reply() {
   const postComment = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem("token");
-    console.log(token);
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/comments/post/${id}`,
@@ -26,6 +25,7 @@ function Reply() {
       );
       const data = await response.json();
       console.log(data);
+
       window.location.reload();
     } catch (error) {
       setPostCommentError(error);
@@ -44,7 +44,7 @@ function Reply() {
         }
 
         const data = await res.json();
-        console.log(data);
+        console.log(data[0].comment);
 
         setRows(data); // data is the array
       } catch (err) {
@@ -68,14 +68,15 @@ function Reply() {
       </div>
 
       <div className="comments-wrapper">
-        {rows.length > 0 ? (
+
+        {rows.length > 0 && rows[0].comment ? (
           rows.map((row, index) => (
             <div className="individual-comment-wrapper" key={index}>
               <span className="comment">{row.comment}</span>
             </div>
           ))
         ) : (
-          <p>no comments..</p>
+          <span className="comment">Be the first to reply!</span>
         )}
         <form onSubmit={postComment} className="comment-form">
           <input

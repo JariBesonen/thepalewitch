@@ -1,6 +1,7 @@
 .logout-btn {
   color: rgb(255, 255, 255);
-  font-family: Cinzel;
+     font-family: "Manrope", sans-serif;
+  font-weight: 300;
   font-size: 2.5rem;
 }
 

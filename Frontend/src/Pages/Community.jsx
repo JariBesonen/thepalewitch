@@ -10,8 +10,6 @@ function Community() {
   const location = useLocation();
   const navigate = useNavigate();
 
-
-
   useEffect(() => {
     const displayPosts = async () => {
       try {
@@ -30,8 +28,6 @@ function Community() {
       displayPosts();
     }
   }, [location.pathname]);
-
-  
 
   const handlePost = async (e) => {
     e.preventDefault();
@@ -78,8 +74,10 @@ function Community() {
             {results.length ? (
               results.map((result) => (
                 <div className="single-post-wrapper" key={result.messageid}>
+                  {/* <span className="single-post-username">
+                    - {result.username}
+                  </span> */}
                   <span className="single-post-message">{result.message}</span>
-                  <span>- {result.username}</span>
                   <div className="post-options-wrapper">
                     <button
                       onClick={() => navigate(`/reply/${result.messageid}`)}
@@ -87,11 +85,11 @@ function Community() {
                     >
                       reply
                     </button>
-                    <button className="like-message-btn">like</button>
-                   
+                    {/* <button className="like-message-btn">like</button> */}
 
+                    {/* 
                     <span>5like</span>
-                    <button className="report-message-btn">report</button>
+                    <button className="report-message-btn">report</button> */}
                   </div>
                 </div>
               ))

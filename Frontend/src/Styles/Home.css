@@ -3,12 +3,12 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
+ font-family: "Cormorant Garamond";
 }
 
 html {
   scroll-behavior: smooth;
 }
-
 
 .homepage-wrapper {
   width: 100%;
@@ -48,27 +48,33 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  font-family: Lora;
+  font-family: "Manrope", sans-serif;
   text-align: center;
 }
 
 .hero-video-info h2 {
   font-size: 3rem;
-  font-family: Cinzel;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
 }
 
 .hero-video-info span {
   font-size: 1.6rem;
   text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 300;
 }
 
 .hero-video-info button {
   width: 12rem;
   height: 2.5rem;
-  background-color: rgb(0, 163, 163);
+  background-color: rgb(227, 253, 255);
   border: none;
   font-size: 1.4rem;
   color: black;
+    font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
 }
 
 .img-carousel-wrapper {
@@ -96,7 +102,7 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  font-family: Lora;
+
 }
 
 .join-community-wrapper {
@@ -109,20 +115,20 @@ html {
   justify-content: space-around;
   border: 1px solid rgb(255, 255, 255);
   text-align: center;
+  padding: 0rem 0.5rem;
 }
-
-
 
 .call-to-action-wrapper h3 {
   font-size: 3rem;
   text-align: center;
-  font-family: Cinzel;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
 }
 
 .call-to-action-wrapper h4 {
-  font-size: 2rem;
-  font-weight: 400;
-  font-family: Lora;
+  font-size: 1.8rem;
+   font-family: "Manrope", sans-serif;
+  font-weight: 300;
 }
 
 .call-to-action-wrapper input {
@@ -137,10 +143,12 @@ html {
   width: 10rem;
   height: 2.5rem;
   color: black;
-  background-color: rgb(0, 163, 163);
+  background-color: rgb(227, 253, 255);
   border: none;
   font-size: 1.4rem;
-  font-family: Lora;
+   font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
 }
 
 @media (min-width: 600px) {
@@ -182,6 +190,7 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+    padding: 0 1rem;
   }
 
   .hero-video-info h2 {
@@ -196,7 +205,7 @@ html {
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: rgb(0, 163, 163);
+     background-color: rgb(227, 253, 255);
     border: none;
     font-size: 1.4rem;
     color: black;
@@ -269,7 +278,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: rgb(0, 163, 163);
+   background-color: rgb(227, 253, 255);
     border: none;
     font-size: 1.4rem;
     color: black;
@@ -329,7 +338,7 @@ html {
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: rgb(0, 163, 163);
+    background-color: rgb(227, 253, 255);
     border: none;
     font-size: 1.4rem;
     transition: background-color 0.1s ease;
@@ -379,8 +388,6 @@ html {
     border: 1px solid rgb(255, 255, 255);
   }
 
-  
-
   .call-to-action-wrapper h3 {
     font-size: 3rem;
     text-align: center;
@@ -398,7 +405,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: rgb(0, 163, 163);
+   background-color: rgb(227, 253, 255);
     border: none;
     font-size: 1.4rem;
     transition: background-color 0.1s ease;
@@ -406,7 +413,7 @@ html {
   }
 
   .call-to-action-wrapper button:hover {
-    background-color: rgb(156, 253, 248);
+   background-color: rgb(227, 253, 255);
   }
 }
 
@@ -464,7 +471,7 @@ html {
     width: 12rem;
     height: 2.5rem;
     border: 1px solid rgb(255, 255, 255);
-    background-color: rgb(0, 163, 163);
+     background-color: rgb(227, 253, 255);
     border: none;
     font-size: 1.4rem;
     color: black;
@@ -473,7 +480,7 @@ html {
 
   .hero-video-info button:hover {
     cursor: pointer;
-    background-color: rgb(156, 253, 248);
+     background-color: rgb(227, 253, 255);
     animation-delay: 2;
   }
 
@@ -515,8 +522,6 @@ html {
     border: 1px solid rgb(255, 255, 255);
   }
 
-
-
   .call-to-action-wrapper h3 {
     font-size: 3rem;
     text-align: center;
@@ -534,7 +539,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-    background-color: rgb(0, 163, 163);
+     background-color: rgb(227, 253, 255);
     border: none;
     color: black;
     font-size: 1.4rem;
@@ -543,6 +548,6 @@ html {
 
   .call-to-action-wrapper button:hover {
     cursor: pointer;
-    background-color: rgb(156, 253, 248);
+     background-color: rgb(227, 253, 255);
   }
 }

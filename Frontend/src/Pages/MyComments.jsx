@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProfileNav from "../Components/ProfileNav";
-import "../Styles/MyPosts.css";
+import "../Styles/MyComments.css";
 function MyComments() {
   const [error, setError] = useState(null);
   const [comments, setComments] = useState([]);

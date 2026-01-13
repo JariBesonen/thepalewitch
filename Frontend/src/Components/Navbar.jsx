@@ -22,7 +22,7 @@ function Navbar({ handleCloseNav }) {
     <nav>
       <Link onClick={handleCloseNav} to={"/"}>
         <h1 className="long-h1">home</h1>
-        <h1 className="short-h1">Home</h1>
+        <h1 className="short-h1">home</h1>
       </Link>
 
       <ul>

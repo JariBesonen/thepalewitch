@@ -5,6 +5,7 @@ function Settings() {
     return (
         <div className="settings-page">
             <ProfileNav />
+            <p>settings feature is under construction</p>
         </div>
     )
 }

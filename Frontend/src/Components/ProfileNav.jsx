@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import '../Styles/ProfileNav.css';
 function ProfileNav() {
   return (
     <div className="profile-nav">

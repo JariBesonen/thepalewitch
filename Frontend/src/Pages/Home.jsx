@@ -67,7 +67,7 @@ function Home() {
       <div className="call-to-action-wrapper">
         <div className="join-community-wrapper">
           <h3>Join the Community</h3>
-          <h4>Ask a question or leave a comment</h4>
+          <h4>Ask a question or leave a comment!</h4>
           <button onClick={joinCommunity}>Join</button>
         </div>
        

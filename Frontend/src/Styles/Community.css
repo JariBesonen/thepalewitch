@@ -9,22 +9,24 @@
   justify-content: flex-start;
   align-items: center;
   padding-top: 0.3rem;
-  font-family: cinzel;
+  font-family: "Cormorant Garamond";
 }
 
 .community-wrapper-heading {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   color: white;
   text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
 }
 
 .community-post-wrapper {
   width: 90%;
   height: 90%;
-  border: 1px solid white;
   margin-top: 1rem;
   display: flex;
   flex-direction: column;
+  background-color: rgb(0, 0, 0);
 }
 
 .community-output-wrapper {
@@ -56,33 +58,38 @@
 .single-post-wrapper {
   width: 90%;
   height: auto;
-  border: 1px solid rgb(119, 119, 119);
-  font-family: lora;
+  text-align: center;
   padding: 0.8rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 1.4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  border: 1px solid rgb(119, 119, 119);
+  box-shadow: 0 12px 40px rgba(80, 74, 74, 0.25);
 }
 
 .single-post-message {
   text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .post-options-wrapper {
   width: 100%;
-  height: 3rem;
+  height: 2.5rem;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   margin-top: 0.5rem;
 }
 
-.output-post span {
-  font-family: lora;
+.single-post-username {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
 }
 
 .community-form {
@@ -98,7 +105,11 @@
   width: 80%;
   height: 80%;
   color: black;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  padding-left: 0.5rem;
+  border: none;
 }
 
 .community-form button {
@@ -106,42 +117,54 @@
   height: 80%;
   color: black;
   font-size: 1.5rem;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif;
+  background-color: white;
+  border: none;
+  border-left: 1px solid black;
 }
 
 .community-form button:hover {
   cursor: pointer;
-  background-color: rgb(0, 163, 163);
+  background-color: rgb(255, 255, 255);
 }
 
 .reply-btn,
 .like-message-btn,
-.report-message-btn, .delete-message-btn {
+.report-message-btn,
+.delete-message-btn {
   color: black;
   background-color: white;
   border: none;
   padding: 0.2rem;
-  width: 4rem;
+  width: 5rem;
   margin: 0.2rem;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
 }
-
-
 
 @media (min-width: 600px) {
   .community-form {
     width: 100%;
     height: 10%;
-    border-bottom: 1px solid white;
+
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+
+
+  .single-post-wrapper {
+    width: 70%;
+    height: auto;
   }
 
   .community-form textarea {
     width: 60%;
     height: 80%;
     color: black;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
   .community-form button {
@@ -153,15 +176,21 @@
 }
 
 @media (min-width: 900px) {
+
+  .single-post-wrapper {
+    width: 65%;
+  }
+
   .community-form {
     width: 100%;
     height: 8%;
-    border-bottom: 1px solid white;
+    
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
+  
   .community-form textarea {
     width: 60%;
     height: 80%;
@@ -178,18 +207,22 @@
 }
 
 @media (min-width: 1200px) {
+
+  .single-post-wrapper {
+    width: 50%;
+  }
   .community-form {
     width: 100%;
     height: 13%;
-    border-bottom: 1px solid white;
+    
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   .community-form textarea {
-    width: 50%;
-    height: 80%;
+    width: 40%;
+    height: 60%;
     max-height: 100%;
     color: black;
     font-size: 1.3rem;
@@ -197,7 +230,7 @@
 
   .community-form button {
     width: 10%;
-    height: 80%;
+    height: 60%;
     color: black;
     font-size: 1.5rem;
   }
