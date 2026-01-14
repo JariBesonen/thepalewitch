@@ -64,13 +64,13 @@
 /* Make sure both inputs have the same width */
 #register-username-input,
 #register-password-input {
-  width: 28rem; /* change to whatever your username input width is */
+  width: 60%; /* change to whatever your username input width is */
 }
 
 /* Wrap password input + button, but don't change the overall width */
 .password-row {
   position: relative;
-  width: 28rem; /* MUST match the input width above */
+  width: 60%; /* MUST match the input width above */
 }
 
 /* Make the password input fill the wrapper */

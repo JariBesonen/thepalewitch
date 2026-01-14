@@ -69,12 +69,12 @@
 /* Match your username input width */
 #login-username-input,
 #login-password-input {
-  width: 28rem; /* set to whatever your design uses */
+  width: 60%; /* set to whatever your design uses */
 }
 
 .password-row {
   position: relative;
-  width: 28rem; /* must match input width */
+  width: 60%; /* must match input width */
 }
 
 .password-row #login-password-input {
@@ -95,7 +95,7 @@ font-size: 1.1rem;
   color: black;
   background-color: orangered;
   height: 100%;
-  width: 4rem;
+  width: 3rem;
 }
 
 
