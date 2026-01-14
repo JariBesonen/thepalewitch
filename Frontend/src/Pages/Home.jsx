@@ -14,7 +14,6 @@ function Home() {
     e.preventDefault();
     const accountExist = localStorage.getItem("token");
     if (!accountExist) {
-      alert("please login/register to join community");
       navigate("/register");
     } else {
       navigate("/community");
@@ -70,7 +69,6 @@ function Home() {
           <h4>Ask a question or leave a comment!</h4>
           <button onClick={joinCommunity}>Join</button>
         </div>
-       
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProfileNav from "../Components/ProfileNav";
+
 import "../Styles/MyPosts.css";
 function MyPosts() {
   const [error, setError] = useState(null);
@@ -28,6 +29,7 @@ function MyPosts() {
   }, []);
 
   const handleDeletePost = async (postId) => {
+    
     const token = localStorage.getItem("token");
 
     try {

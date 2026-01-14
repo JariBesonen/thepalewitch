@@ -43,7 +43,7 @@ function Register() {
       <form onSubmit={handleRegisterUser} className="register-form">
         {error && <p>{error.message}</p>}
         <h2>Register</h2>
-        <label htmlFor="register-username-input">register</label>
+        <label htmlFor="register-username-input">username</label>
         <input
           onChange={(e) => setUsername(e.target.value)}
           value={username}
