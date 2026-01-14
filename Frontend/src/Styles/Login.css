@@ -66,6 +66,39 @@
 
 }
 
+/* Match your username input width */
+#login-username-input,
+#login-password-input {
+  width: 28rem; /* set to whatever your design uses */
+}
+
+.password-row {
+  position: relative;
+  width: 28rem; /* must match input width */
+}
+
+.password-row #login-password-input {
+  width: 100%;
+  padding-right: 4.5rem; /* space for show button */
+}
+
+.show-password-btn {
+  position: absolute;
+  right: 0rem;
+  top: 50%;
+  right: 0rem;
+  transform: translateY(-50%);
+  height: 70%;
+border: none;
+font-size: 1.1rem;
+  cursor: pointer;
+  color: black;
+  background-color: orangered;
+  height: 100%;
+  width: 4rem;
+}
+
+
 
 @media (min-width: 900px) {
 .login-form {

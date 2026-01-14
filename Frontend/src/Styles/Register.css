@@ -1,5 +1,5 @@
 * {
-   font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 400;
 }
 
@@ -11,7 +11,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
 }
 
 .register-form {
@@ -62,55 +61,88 @@
   text-decoration: underline;
 }
 
+/* Make sure both inputs have the same width */
+#register-username-input,
+#register-password-input {
+  width: 28rem; /* change to whatever your username input width is */
+}
+
+/* Wrap password input + button, but don't change the overall width */
+.password-row {
+  position: relative;
+  width: 28rem; /* MUST match the input width above */
+}
+
+/* Make the password input fill the wrapper */
+.password-row #register-password-input {
+  width: 100%;
+  padding-right: 4.5rem; /* space so text doesn't go under the button */
+}
+
+/* Place the show/hide button on top of the input (doesn't steal width) */
+.show-password-btn {
+  position: absolute;
+  right: 0rem;
+  top: 50%;
+  right: 0rem;
+  transform: translateY(-50%);
+  height: 70%;
+border: none;
+font-size: 1.1rem;
+  cursor: pointer;
+  color: black;
+  background-color: orangered;
+  height: 100%;
+  width: 4rem;
+}
 
 
 @media (min-width: 900px) {
-.register-form {
-  width: 55%;
-  height: 70%;
-  border: 1px solid white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-}
+  .register-form {
+    width: 55%;
+    height: 70%;
+    border: 1px solid white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 
-.register-form h2 {
-  color: white;
-  font-size: 2.7rem;
-}
+  .register-form h2 {
+    color: white;
+    font-size: 2.7rem;
+  }
 
-.register-form label {
-  color: white;
-  font-size: 1.4rem;
-}
+  .register-form label {
+    color: white;
+    font-size: 1.4rem;
+  }
 
-.register-form input {
-  height: 2rem;
-  width: 65%;
-  font-size: 1.2rem;
-  padding-left: 0.5rem;
-  border: none;
-  color: black;
-}
+  .register-form input {
+    height: 2rem;
+    width: 65%;
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+    border: none;
+    color: black;
+  }
 
-.register-btn {
-  width: 8rem;
-  height: 1.7rem;
-  font-size: 1.2rem;
-  background-color: white;
-  border: none;
-  color: black;
-}
+  .register-btn {
+    width: 8rem;
+    height: 1.7rem;
+    font-size: 1.2rem;
+    background-color: white;
+    border: none;
+    color: black;
+  }
 
-.register-btn:hover {
-  cursor: pointer;
-}
+  .register-btn:hover {
+    cursor: pointer;
+  }
 
-.register-form-register-link {
-  font-size: 1.1rem;
-  color: white;
-  text-decoration: underline;
-}
-
+  .register-form-register-link {
+    font-size: 1.1rem;
+    color: white;
+    text-decoration: underline;
+  }
 }
