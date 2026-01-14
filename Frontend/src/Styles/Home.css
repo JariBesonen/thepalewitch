@@ -60,7 +60,7 @@ html {
 }
 
 .hero-video-info span {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   text-align: center;
   font-family: "Manrope", sans-serif;
   font-weight: 300;
@@ -71,11 +71,15 @@ html {
   height: 2.5rem;
   background-color: rgb(255, 255, 255);
   border: none;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: black;
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   margin-bottom: 0.6rem;
+}
+
+.hero-video-info button:hover {
+  cursor: pointer;
 }
 
 .img-carousel-wrapper {
@@ -149,6 +153,7 @@ html {
   font-family: "Manrope", sans-serif;
   font-weight: 400;
   margin-bottom: 0.3rem;
+  cursor: pointer;
 }
 
 @media (min-width: 600px) {

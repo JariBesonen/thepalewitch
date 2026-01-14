@@ -5,7 +5,7 @@ function Notifications() {
     return (
         <div className="notifications-page">
             <ProfileNav />
-            <p>notification feature under construction</p>
+      
         </div>
     )
 }
