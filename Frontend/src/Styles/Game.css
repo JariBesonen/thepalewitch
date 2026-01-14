@@ -45,7 +45,7 @@ body {
 .game-wrapper button {
   width: 12rem;
   height: 2.5rem;
-background-color: rgb(227, 253, 255);
+background-color: rgb(255, 255, 255);
   color: black;
   font-size: 1.4rem;
   border: none;
@@ -55,7 +55,7 @@ background-color: rgb(227, 253, 255);
 }
 
 .game-wrapper button:hover {
-  background-color: rgb(227, 253, 255);
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
 
@@ -91,14 +91,14 @@ background-color: rgb(227, 253, 255);
   .game-wrapper button {
     width: 12rem;
     height: 2.5rem;
-   background-color: rgb(227, 253, 255);
+   background-color: rgb(255, 255, 255);
 
     transition: background-color 0.1s ease;
     font-size: 1.4rem;
     border: none;
   }
   .game-wrapper button:hover {
-    background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
 }
@@ -135,14 +135,14 @@ background-color: rgb(227, 253, 255);
   .game-wrapper button {
     width: 12rem;
     height: 2.5rem;
-    background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
 
     transition: background-color 0.1s ease;
     font-size: 1.4rem;
     border: none;
   }
   .game-wrapper button:hover {
-  background-color: rgb(227, 253, 255);
+  background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
 }
@@ -179,7 +179,7 @@ background-color: rgb(227, 253, 255);
   .game-wrapper button {
     width: 12rem;
     height: 2.5rem;
-    background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
 
     transition: background-color 0.1s ease;
     font-size: 1.4rem;
@@ -187,7 +187,7 @@ background-color: rgb(227, 253, 255);
   }
 
   .game-wrapper button:hover {
-    background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
 }

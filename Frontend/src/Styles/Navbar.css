@@ -24,10 +24,16 @@ nav {
   padding-top: 6rem;
 }
 
+/* All nav links (NavLink renders an <a>) */
 nav a {
   text-decoration: none;
   font-family: "Manrope", sans-serif;
   font-weight: 300;
+}
+
+/* ✅ ACTIVE LINK COLOR (EDIT THIS) */
+nav a.nav-link.active {
+  color: orangered; /* change this to whatever you want */
 }
 
 /* Title */
@@ -36,9 +42,9 @@ nav a {
   margin-bottom: 2rem;
   font-size: 2.5rem;
 }
+
 .short-h1 {
   font-size: 2.5rem;
-
   color: rgb(255, 255, 255);
   margin-bottom: 2rem;
   text-decoration: none;
@@ -47,7 +53,7 @@ nav a {
   letter-spacing: 0.1rem;
 }
 
-/* Nav links */
+/* Nav links list */
 nav ul {
   list-style: none;
   display: flex;
@@ -61,15 +67,12 @@ nav ul li a {
   text-decoration: none;
   color: rgb(255, 255, 255);
   font-size: 2.5rem;
-  /* position: relative; */
   transition: color 0.2s ease;
-
-  /* letter-spacing: 0.1rem; */
 }
 
+/* Login button text inherits color from parent link */
 .nav-login-btn {
-  color: rgb(255, 255, 255);
-   font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 400;
   font-size: 2.5rem;
 }
@@ -90,7 +93,6 @@ nav ul li a {
   .long-h1 {
     display: block;
     font-size: 1.3rem;
-
     color: rgb(255, 255, 255);
     margin-right: 0.7rem;
     text-decoration: none;
@@ -100,9 +102,11 @@ nav ul li a {
     text-align: center;
     margin-top: 2rem;
   }
+
   .short-h1 {
     display: none;
   }
+
   nav ul {
     gap: 0.7rem;
     display: flex;
@@ -113,6 +117,7 @@ nav ul li a {
     font-size: 1.3rem;
     letter-spacing: 0.1rem;
   }
+
   .nav-login-btn {
     font-size: 1.2rem;
   }
@@ -138,14 +143,15 @@ nav ul li a {
     margin-right: 2rem;
     text-decoration: none;
     font-family: "Manrope", sans-serif;
-
     letter-spacing: 0.1rem;
     text-align: center;
     margin-top: 2rem;
   }
+
   .short-h1 {
     display: none;
   }
+
   nav ul {
     gap: 2rem;
     display: flex;
@@ -159,26 +165,5 @@ nav ul li a {
 }
 
 @media (min-width: 1200px) {
-  /* .long-h1 {
-    display: block;
-    font-size: 2.4rem;
-    font-weight: 500;
-    color: rgb(0, 0, 0);
-    margin-right: 0.5rem;
-    text-decoration: none;
-    font-family: Cinzel;
-    letter-spacing: 0.1rem;
-  }
-  .short-h1 {
-    display: none;
-  }
-
-  nav ul li a {
-    font-size: 2.2rem;
-    letter-spacing: 0.1rem;
-  }
-
-  nav ul {
-    gap: 3rem;
-  } */
+  /* keep your commented section if you want */
 }

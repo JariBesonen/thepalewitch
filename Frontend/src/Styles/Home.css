@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   color: white;
- font-family: "Cormorant Garamond";
+  font-family: "Cormorant Garamond";
 }
 
 html {
@@ -69,11 +69,11 @@ html {
 .hero-video-info button {
   width: 12rem;
   height: 2.5rem;
-  background-color: rgb(227, 253, 255);
+  background-color: rgb(255, 255, 255);
   border: none;
   font-size: 1.4rem;
   color: black;
-    font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 400;
   margin-bottom: 0.6rem;
 }
@@ -103,7 +103,6 @@ html {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-
 }
 
 .join-community-wrapper {
@@ -128,7 +127,7 @@ html {
 
 .call-to-action-wrapper h4 {
   font-size: 1.8rem;
-   font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 300;
 }
 
@@ -144,10 +143,10 @@ html {
   width: 10rem;
   height: 2.5rem;
   color: black;
-  background-color: rgb(227, 253, 255);
+  background-color: rgb(255, 255, 255);
   border: none;
   font-size: 1.4rem;
-   font-family: "Manrope", sans-serif;
+  font-family: "Manrope", sans-serif;
   font-weight: 400;
   margin-bottom: 0.3rem;
 }
@@ -206,7 +205,7 @@ html {
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-     background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 1.4rem;
     color: black;
@@ -279,7 +278,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-   background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 1.4rem;
     color: black;
@@ -339,7 +338,7 @@ html {
   .hero-video-info button {
     width: 12rem;
     height: 2.5rem;
-    background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 1.4rem;
     transition: background-color 0.1s ease;
@@ -347,7 +346,7 @@ html {
   }
 
   .hero-video-info button:hover {
-    background-color: rgb(156, 253, 248);
+    background-color: rgb(255, 255, 255);
     cursor: pointer;
   }
 
@@ -406,7 +405,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-   background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 1.4rem;
     transition: background-color 0.1s ease;
@@ -414,7 +413,7 @@ html {
   }
 
   .call-to-action-wrapper button:hover {
-   background-color: rgb(227, 253, 255);
+    background-color: rgb(227, 253, 255);
   }
 }
 
@@ -472,17 +471,17 @@ html {
     width: 12rem;
     height: 2.5rem;
     border: 1px solid rgb(255, 255, 255);
-     background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     font-size: 1.4rem;
-    color: black;
+    color: rgb(0, 0, 0);
     transition: background-color 0.1s ease;
   }
 
   .hero-video-info button:hover {
     cursor: pointer;
-     background-color: rgb(227, 253, 255);
-    animation-delay: 2;
+   
+   
   }
 
   .img-carousel-wrapper {
@@ -540,7 +539,7 @@ html {
   .call-to-action-wrapper button {
     width: 10rem;
     height: 2.5rem;
-     background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
     border: none;
     color: black;
     font-size: 1.4rem;
@@ -549,6 +548,6 @@ html {
 
   .call-to-action-wrapper button:hover {
     cursor: pointer;
-     background-color: rgb(227, 253, 255);
+    background-color: rgb(255, 255, 255);
   }
 }

@@ -106,6 +106,10 @@
     width: 50%;
   }
 
+  .individual-comment-wrapper {
+    width: 60%;
+  }
+
   .comment-form {
     width: 60%;
   }
