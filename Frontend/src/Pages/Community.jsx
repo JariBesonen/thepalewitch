@@ -17,7 +17,7 @@ function Community() {
           `${import.meta.env.VITE_API_URL}/api/message/display`
         );
         const data = await response.json();
-        console.log(data);
+       
         setResults(data);
       } catch (error) {
         console.log(error.message);
@@ -35,7 +35,7 @@ function Community() {
     if (!token) {
       return console.log("token not found during handlePost frontend");
     }
-    console.log("frontend token check", token);
+  
     try {
       const response = await fetch(
         `${import.meta.env.VITE_API_URL}/api/message/post`,
@@ -52,7 +52,7 @@ function Community() {
         console.log(error.message);
       } else {
         const data = await response.json();
-        console.log(data);
+        
 
         setResults(data);
         setMessage("");

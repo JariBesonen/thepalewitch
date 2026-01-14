@@ -11,7 +11,6 @@ function Register() {
 
   const handleRegisterUser = async (e) => {
     e.preventDefault();
-    console.log("VITE_API_URL IS:", import.meta.env.VITE_API_URL);
 
     try {
       const response = await fetch(
@@ -27,7 +26,7 @@ function Register() {
 
       const data = await response.json();
       if (response.ok) {
-        console.log(data);
+        console.log(data.username, " is now registered");
         setUsername("");
         setPassword("");
       }

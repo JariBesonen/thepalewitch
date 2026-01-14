@@ -7,7 +7,7 @@ function MyPosts() {
   useEffect(() => {
     const displayMyPosts = async () => {
       const token = localStorage.getItem("token");
-     
+
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/api/message/displayMyPosts`,
@@ -20,7 +20,6 @@ function MyPosts() {
         );
         const data = await response.json();
         setPosts(data);
-        console.log(data);
       } catch (error) {
         setError(error);
       }
@@ -42,7 +41,9 @@ function MyPosts() {
         }
       );
       const data = await response.json();
-      console.log(data);
+      if (data) {
+        console.log("placeholder text");
+      }
 
       window.location.reload();
     } catch (error) {

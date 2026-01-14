@@ -7,7 +7,7 @@ function MyComments() {
   useEffect(() => {
     const displayMyComments = async () => {
       const token = localStorage.getItem("token");
-      console.log(token);
+
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/api/comments/displayMyComments`,
@@ -20,7 +20,6 @@ function MyComments() {
         );
         const data = await response.json();
         setComments(data);
-        console.log(data);
       } catch (error) {
         setError(error);
       }
@@ -42,7 +41,9 @@ function MyComments() {
         }
       );
       const data = await response.json();
-      console.log(data);
+      if (data) {
+        console.log("placeholder text");
+      }
 
       window.location.reload();
     } catch (error) {

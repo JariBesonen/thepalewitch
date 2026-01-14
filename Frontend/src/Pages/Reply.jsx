@@ -24,7 +24,9 @@ function Reply() {
         }
       );
       const data = await response.json();
-      console.log(data);
+      if (data) {
+        console.log("placeholder text");
+      }
 
       window.location.reload();
     } catch (error) {
@@ -44,7 +46,6 @@ function Reply() {
         }
 
         const data = await res.json();
-        console.log(data[0].comment);
 
         setRows(data); // data is the array
       } catch (err) {
@@ -68,7 +69,6 @@ function Reply() {
       </div>
 
       <div className="comments-wrapper">
-
         {rows.length > 0 && rows[0].comment ? (
           rows.map((row, index) => (
             <div className="individual-comment-wrapper" key={index}>
