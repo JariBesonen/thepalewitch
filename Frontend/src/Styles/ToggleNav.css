@@ -1,15 +1,16 @@
 .navbar-icon {
     width: 15rem;
     height: 15rem;
-    background-color: red;
+   
     z-index: 5000;
+    position: fixed;
 }
 
 .nav-icon {
-    position: absolute;
+    position: fixed;
     z-index: 2000;
     top: 0;
-    left: rem; 
+  background-color: black;
 }
 
 
