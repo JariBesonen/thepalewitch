@@ -74,9 +74,9 @@ function Community() {
             {results.length ? (
               results.map((result) => (
                 <div className="single-post-wrapper" key={result.messageid}>
-                  {/* <span className="single-post-username">
+                  <span className="single-post-username">
                     - {result.username}
-                  </span> */}
+                  </span>
                   <span className="single-post-message">{result.message}</span>
                   <div className="post-options-wrapper">
                     <button
