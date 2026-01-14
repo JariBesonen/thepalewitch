@@ -8,7 +8,6 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
@@ -31,8 +30,7 @@ function Login() {
         setPassword("");
         localStorage.setItem("token", data.token);
       }
-    
-     
+
       navigate(`/`);
     } catch (error) {
       setError(error);
@@ -50,6 +48,8 @@ function Login() {
           onChange={(e) => setUsername(e.target.value)}
           type="text"
           id="login-username-input"
+          minLength={4}
+          maxLength={18}
           required
         />
         <label htmlFor="login-pasword-input">password</label>
@@ -58,6 +58,8 @@ function Login() {
           value={password}
           type="password"
           id="login-password-input"
+          minLength={4}
+          maxLength={18}
           required
         />
         <button type="submit" className="login-btn">

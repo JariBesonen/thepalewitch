@@ -50,13 +50,19 @@ function Register() {
           value={username}
           type="text"
           id="register-username-input"
+          minLength={4}
+          maxLength={18}
+          required
         />
         <label htmlFor="register-pasword-input">password</label>
         <input
           onChange={(e) => setPassword(e.target.value)}
           value={password}
-          type="text"
+          type="password"
           id="register-password-input"
+          minLength={4}
+          maxLength={18}
+          required
         />
         <button type="submit" className="register-btn">
           register
