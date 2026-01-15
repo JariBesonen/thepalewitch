@@ -5,11 +5,11 @@ const express = require("express");
 const app = express();
 const helmet = require("helmet");
 const cors = require("cors");
+
 const authRouter = require("./Routers/authRouter");
 const DetailRouter = require("./Routers/DetailRouter");
 const messageRouter = require("./Routers/messageRouter");
-const commentRouter = require('./Routers/commentRouter');
-
+const commentRouter = require("./Routers/commentRouter");
 
 app.disable("x-powered-by");
 
@@ -22,12 +22,17 @@ app.use(express.urlencoded({ extended: true }));
 // -----------------------------
 // 2. CORS (must come BEFORE Helmet)
 // -----------------------------
-const allowedOrigins = ["http://localhost:5173", "https://thepalewitch.com"];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://thepalewitch.com",
+  "https://www.thepalewitch.com",
+];
 
 app.use(
   cors({
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true); // allow Postman, curl, etc.
+      // Allow requests with no origin (Postman, curl, server-to-server)
+      if (!origin) return callback(null, true);
 
       const isAllowed =
         allowedOrigins.includes(origin) || origin.endsWith(".vercel.app");
@@ -36,8 +41,14 @@ app.use(
 
       return callback(new Error("Not allowed by CORS"));
     },
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    optionsSuccessStatus: 204,
   })
 );
+
+// Optional, but helps in some deployments with preflight edge cases
+app.options("*", cors());
 
 // -----------------------------
 // 3. Helmet (must come AFTER CORS)
@@ -71,7 +82,7 @@ app.get("/api/test-db", async (req, res) => {
 app.use("/api/users", authRouter);
 app.use("/api/details", DetailRouter);
 app.use("/api/message", messageRouter);
-app.use('/api/comments', commentRouter);
+app.use("/api/comments", commentRouter);
 
 // Health check
 app.get("/api/health", (req, res) => {
@@ -83,5 +94,5 @@ app.get("/api/health", (req, res) => {
 // -----------------------------
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Server is listening on port http://localhost:${PORT}`);
+  console.log(`Server is listening on port ${PORT}`);
 });

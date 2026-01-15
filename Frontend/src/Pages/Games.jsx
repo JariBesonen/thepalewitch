@@ -7,9 +7,9 @@ function Games() {
   return (
     <div className="gamepage-wrapper">
       <div className="game-wrapper">
-        <h2>coming soon</h2>
+        <h2>Into The Mines</h2>
         <div className="img-preview">img</div>
-        <button className="steam-link-btn">not available</button>
+        <button className="steam-link-btn">coming soon</button>
       </div>
       <div className="game-wrapper">
         <h2>untitled</h2>
