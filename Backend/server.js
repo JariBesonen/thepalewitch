@@ -28,31 +28,30 @@ const allowedOrigins = [
   "https://www.thepalewitch.com",
 ];
 
-app.use(
-  cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (Postman, curl, server-to-server)
-      if (!origin) return callback(null, true);
+const corsOptions = {
+  origin: (origin, callback) => {
+    // Allow requests with no origin (Postman, curl, server-to-server)
+    if (!origin) return callback(null, true);
 
-      const isAllowed =
-        allowedOrigins.includes(origin) || origin.endsWith(".vercel.app");
+    const isAllowed =
+      allowedOrigins.includes(origin) || origin.endsWith(".vercel.app");
 
-      if (isAllowed) return callback(null, true);
+    if (isAllowed) return callback(null, true);
 
-      return callback(new Error("Not allowed by CORS"));
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowedHeaders: ["Content-Type", "Authorization"],
-    optionsSuccessStatus: 204,
-  })
-);
+    return callback(new Error("Not allowed by CORS"));
+  },
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
+  optionsSuccessStatus: 204,
+};
 
-// Optional, but helps in some deployments with preflight edge cases
-app.options("*", cors());
+app.use(cors(corsOptions));
+
+// NOTE: DO NOT add `app.options("*", ...)` here.
+// Your cors middleware above already handles preflight.
 
 // -----------------------------
 // 3. Helmet (must come AFTER CORS)
-// Adjusted to allow cross-origin API usage
 // -----------------------------
 app.use(
   helmet({
@@ -63,7 +62,7 @@ app.use(
 );
 
 // -----------------------------
-// 5. Database + Routes
+// 4. Database + Routes
 // -----------------------------
 const pool = require("./db");
 
@@ -90,7 +89,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // -----------------------------
-// 6. Start Server
+// 5. Start Server
 // -----------------------------
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
