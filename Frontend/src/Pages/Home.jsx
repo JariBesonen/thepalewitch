@@ -49,7 +49,7 @@ function Home() {
         <div className="hero-video-info">
           <h2>{gameTitle}</h2>
           <span>{gameDes}</span>
-          <button>Wishlist to Steam</button>
+          <button>Coming Soon</button>
         </div>
       </div>
       <div className="img-carousel-wrapper">
