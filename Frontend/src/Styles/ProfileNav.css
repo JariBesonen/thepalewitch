@@ -21,6 +21,21 @@
   font-family: "Manrope", sans-serif;
   font-weight: 400;
 }
+/* kill default link styling that can break layout */
+.profile-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex; /* keeps it behaving nicely inside the flex ul */
+  align-items: center;
+}
+
+/* highlight the ACTIVE page */
+.profile-link.active li {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
 
 @media (min-width: 600px) {
   .profile-nav {

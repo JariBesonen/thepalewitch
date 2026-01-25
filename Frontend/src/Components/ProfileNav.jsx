@@ -1,22 +1,38 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import '../Styles/ProfileNav.css';
+import { NavLink } from "react-router-dom";
+import "../Styles/ProfileNav.css";
+
 function ProfileNav() {
   return (
     <div className="profile-nav">
       <ul>
-        <Link to="/notifications">
+        <NavLink
+          to="/notifications"
+          className={({ isActive }) => (isActive ? "profile-link active" : "profile-link")}
+        >
           <li>notifications</li>
-        </Link>
-        <Link to="/settings">
+        </NavLink>
+
+        <NavLink
+          to="/settings"
+          className={({ isActive }) => (isActive ? "profile-link active" : "profile-link")}
+        >
           <li>settings</li>
-        </Link>
-        <Link to={"/myposts"}>
+        </NavLink>
+
+        <NavLink
+          to="/myposts"
+          className={({ isActive }) => (isActive ? "profile-link active" : "profile-link")}
+        >
           <li>my_posts</li>
-        </Link>
-        <Link to={"/mycomments"}>
+        </NavLink>
+
+        <NavLink
+          to="/mycomments"
+          className={({ isActive }) => (isActive ? "profile-link active" : "profile-link")}
+        >
           <li>my_comments</li>
-        </Link>
+        </NavLink>
       </ul>
     </div>
   );
