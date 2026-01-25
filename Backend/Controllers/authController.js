@@ -1,4 +1,4 @@
-const { registerUser, userExists } = require("../Models/authModel");
+ const { registerUser, userExists } = require("../Models/authModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
